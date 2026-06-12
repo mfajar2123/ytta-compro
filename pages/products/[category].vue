@@ -29,10 +29,10 @@
               </div>
             </div>
             <div class="p-8 flex flex-col flex-grow bg-gradient-to-b from-white to-whitedust/50">
-              <h3 class="text-2xl font-semibold text-blackobsidian mb-4 h-16 overflow-hidden leading-tight" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+              <h3 class="text-2xl font-semibold text-blackobsidian mb-4 h-16 line-clamp-2 leading-tight">
                 {{ product.name }}
               </h3>
-              <p class="text-gray-600 text-base mb-8 flex-grow h-12 overflow-hidden leading-relaxed" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+              <p class="text-gray-600 text-base mb-8 flex-grow h-12 line-clamp-2 leading-relaxed">
                 {{ product.description }}
               </p>
               
@@ -101,25 +101,20 @@ onMounted(() => {
   )
 
   // Complex Scroll Animation for Cards
-  gsap.fromTo('.product-card',
-    { 
-      y: 100, 
-      opacity: 0,
-      scale: 0.95
-    },
-    {
+  gsap.set('.product-card', { y: 100, opacity: 0, scale: 0.95 })
+  ScrollTrigger.batch('.product-card', {
+    onEnter: batch => gsap.to(batch, {
       y: 0,
       opacity: 1,
       scale: 1,
       duration: 1,
       stagger: 0.15,
       ease: 'back.out(1.2)',
-      scrollTrigger: {
-        trigger: '.grid',
-        start: 'top 85%',
-      }
-    }
-  )
+      overwrite: true
+    }),
+    start: 'top 85%',
+    once: true
+  })
 
   // Parallax effect on scroll
   gsap.to('.hero-section', {

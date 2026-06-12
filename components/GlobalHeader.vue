@@ -28,7 +28,7 @@
               Product
               <Icon name="mdi:chevron-down" class="text-lg transition-transform group-hover:rotate-180" />
             </button>
-            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-blackobsidian ring-1 ring-goldensand/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100 border border-darkamethyst">
+            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-blackobsidian ring-1 ring-goldensand/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100 border border-darkamethyst z-50">
               <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <NuxtLink to="/products/logam-series" class="block px-4 py-3 text-sm text-gray-300 hover:bg-darkamethyst hover:text-goldensand" role="menuitem">
                   Logam Series
@@ -51,7 +51,7 @@
 
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
-          <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md focus:outline-none text-white">
+          <button aria-label="Toggle Mobile Menu" @click="isMobileMenuOpen = !isMobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md focus:outline-none text-white">
             <Icon :name="isMobileMenuOpen ? 'mdi:close' : 'mdi:menu'" class="text-3xl" />
           </button>
         </div>
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="isMobileMenuOpen" class="md:hidden bg-blackobsidian text-white border-t border-darkamethyst">
+    <div v-show="isMobileMenuOpen" class="md:hidden bg-blackobsidian text-white border-t border-darkamethyst max-h-[calc(100vh-5rem)] overflow-y-auto">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <NuxtLink to="/" class="block px-3 py-2 rounded-md text-base font-medium hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">Home</NuxtLink>
         
