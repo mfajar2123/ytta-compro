@@ -148,25 +148,23 @@ onMounted(() => {
     "-=0.6"
   )
 
-  gsap.fromTo('.store-card', 
-    { 
-      y: 100, 
-      opacity: 0,
-      rotateX: 10
-    },
-    { 
-      y: 0, 
+  // OPTIMIZATION: Use ScrollTrigger.batch for large lists (68 items)
+  // This animates cards in chunks as they enter the viewport, rather than all at once
+  gsap.set('.store-card', { y: 50, opacity: 0 })
+  
+  ScrollTrigger.batch('.store-card', {
+    interval: 0.1,
+    batchMax: 6,
+    onEnter: batch => gsap.to(batch, {
       opacity: 1, 
-      rotateX: 0,
-      duration: 1, 
-      stagger: 0.15, 
-      ease: 'back.out(1.2)',
-      scrollTrigger: {
-        trigger: '.list-enter-active', // Fallback trigger
-        start: 'top 85%'
-      }
-    }
-  )
+      y: 0, 
+      duration: 0.6,
+      stagger: 0.1, 
+      ease: 'power2.out',
+      overwrite: true
+    }),
+    start: 'top 95%',
+  })
 
   // Parallax effect on scroll
   gsap.to('.hero-section', {

@@ -54,31 +54,128 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-24 bg-blackobsidian text-white relative">
+    <!-- Services / Features Section -->
+    <section class="py-24 bg-whitedust border-t border-gray-200">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="gsap-fade-up text-4xl md:text-5xl font-semibold mb-4 text-blackobsidian">Mengapa <span class="text-goldensand">Raja Emas?</span></h2>
+          <p class="gsap-fade-up text-gray-600 max-w-2xl mx-auto text-lg">Bandingkan dengan tempat lain, Anda akan merasakan bedanya. Proses mudah, transparan, dan harga beli tertinggi.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Featured large card -->
+          <div class="feature-card lg:col-span-2 bg-blackobsidian rounded-[2rem] p-8 md:p-12 shadow-2xl text-white relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-goldensand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-goldensand text-blackobsidian rounded-2xl flex items-center justify-center mb-6">
+                <Icon :name="siteData.features[0].icon" class="text-3xl" />
+              </div>
+              <h3 class="text-3xl font-semibold mb-4 text-goldensand">{{ siteData.features[0].title }}</h3>
+              <p class="text-gray-300 text-lg leading-relaxed font-sans max-w-xl">{{ siteData.features[0].description }}</p>
+            </div>
+          </div>
+          
+          <!-- Smaller cards -->
+          <div v-for="(feature, idx) in siteData.features.slice(1)" :key="'feat-'+idx" class="feature-card bg-white rounded-[2rem] p-8 shadow-xl border border-goldensand/20 hover:border-goldensand transition-colors group">
+            <div class="w-14 h-14 bg-whitedust text-goldensand rounded-xl flex items-center justify-center mb-6 group-hover:bg-goldensand group-hover:text-white transition-colors duration-300">
+              <Icon :name="feature.icon" class="text-2xl" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-blackobsidian">{{ feature.title }}</h3>
+            <p class="text-gray-600 font-sans leading-relaxed text-sm">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-blackobsidian relative overflow-hidden border-t border-darkamethyst">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-goldensand/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-darkamethyst/10 rounded-full blur-3xl"></div>
+      </div>
+      
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-white">Apa Kata Klien Kami</h2>
-          <p class="text-gray-400 max-w-2xl mx-auto text-lg">Testimoni dari pelanggan yang telah mempercayakan investasi dan kebutuhan emasnya kepada Raja Emas Indonesia.</p>
+          <h2 class="gsap-fade-up text-4xl md:text-5xl font-semibold mb-4 text-white">Harga Beli Emas <span class="text-goldensand">Hari Ini</span></h2>
+          <p class="gsap-fade-up text-gray-400 font-sans text-lg">Update terakhir: <span class="text-goldensand font-semibold">{{ siteData.pricing.lastUpdate }}</span></p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="testimonial-card bg-white/5 p-2 rounded-3xl border border-white/10 hover:border-goldensand/50 transition-colors transform hover:-translate-y-2 duration-500 shadow-2xl relative group overflow-hidden h-[450px]">
-            <div class="absolute inset-0 bg-gradient-to-t from-blackobsidian/90 via-blackobsidian/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 rounded-3xl pointer-events-none"></div>
-            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-2xl object-cover relative z-0" loading="lazy" />
-            
-            <!-- Hover Overlay Content -->
-            <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <Icon name="simple-icons:shopee" class="text-[#EE4D2D] text-xl" />
-                </div>
-                <span class="text-white font-semibold font-sans text-sm tracking-wide">Review dari {{ testi.platform }}</span>
-              </div>
-              <div class="flex text-goldensand drop-shadow-md">
-                <Icon v-for="i in 5" :key="'star-'+i" name="mdi:star" class="text-lg" />
-              </div>
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+          <!-- Karat Table (Scrollable vertically) -->
+          <div class="gsap-fade-up w-full lg:w-1/2 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
+            <div class="bg-gradient-to-r from-goldensand to-yellow-600 p-6 text-center shrink-0">
+              <h3 class="text-xl font-bold text-blackobsidian uppercase tracking-wider">Kadar Karat</h3>
             </div>
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-grow">
+              <table class="w-full text-left font-sans text-white border-collapse">
+                <thead>
+                  <tr class="text-gray-400 text-sm border-b border-white/10">
+                    <th class="pb-3 font-medium">Kadar Karat</th>
+                    <th class="pb-3 font-medium text-right">Harga per Gram</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in siteData.pricing.karat" :key="'karat-'+index" class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td class="py-4 font-semibold text-goldensand">{{ item.karat }}</td>
+                    <td class="py-4 text-right font-medium tracking-wide">{{ item.price }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Logam Mulia Table -->
+          <div class="gsap-fade-up w-full lg:w-1/2 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
+            <div class="bg-gradient-to-r from-gray-700 to-blackobsidian p-6 text-center border-b border-goldensand/30 shrink-0">
+              <h3 class="text-xl font-bold text-goldensand uppercase tracking-wider">Logam Mulia (S)</h3>
+            </div>
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-grow">
+              <table class="w-full text-left font-sans text-white border-collapse">
+                <thead>
+                  <tr class="text-gray-400 text-sm border-b border-white/10">
+                    <th class="pb-3 font-medium">Jenis</th>
+                    <th class="pb-3 font-medium">Kadar</th>
+                    <th class="pb-3 font-medium text-right">Harga / Gr</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in siteData.pricing.logamMulia" :key="'lm-'+index" class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td class="py-4">
+                      <span class="block font-semibold text-white">{{ item.name }}</span>
+                      <span v-if="item.karat !== '-'" class="text-xs text-goldensand">{{ item.karat }}</span>
+                    </td>
+                    <td class="py-4 text-gray-400">{{ item.purity }}</td>
+                    <td class="py-4 text-right font-medium text-goldensand">{{ item.price }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Swipeable Carousel) -->
+    <section class="py-24 bg-whitedust relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+        <div class="gsap-fade-up">
+          <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-blackobsidian">Apa Kata <span class="text-goldensand">Klien Kami</span></h2>
+          <p class="text-gray-600 max-w-xl text-lg font-sans">Geser untuk melihat testimoni dari pelanggan yang telah mempercayakan investasi dan kebutuhan emasnya kepada Raja Emas Indonesia.</p>
+        </div>
+        <div class="gsap-fade-up hidden md:flex gap-4">
+          <button aria-label="Previous Review" @click="scrollTesti('left')" class="w-12 h-12 rounded-full border border-goldensand flex items-center justify-center text-goldensand hover:bg-goldensand hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-goldensand">
+            <Icon name="mdi:chevron-left" class="text-2xl" />
+          </button>
+          <button aria-label="Next Review" @click="scrollTesti('right')" class="w-12 h-12 rounded-full border border-goldensand flex items-center justify-center text-goldensand hover:bg-goldensand hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-goldensand">
+            <Icon name="mdi:chevron-right" class="text-2xl" />
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
+        <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
+          <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
+            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-cover" loading="lazy" />
           </div>
         </div>
       </div>
@@ -130,12 +227,24 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import siteData from '~/data/siteData.json'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const testiContainer = ref(null)
+
+const scrollTesti = (direction) => {
+  if (testiContainer.value) {
+    const scrollAmount = window.innerWidth > 768 ? 450 + 24 : window.innerWidth * 0.85;
+    testiContainer.value.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    })
+  }
+}
 
 useSeoMeta({
   title: 'Home',
@@ -164,36 +273,35 @@ onMounted(() => {
     "-=0.6"
   )
 
-  // Scroll Animations
-  gsap.utils.toArray('.gsap-fade-up').forEach(element => {
-    gsap.fromTo(element, 
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
+  // Scroll Animations for generic fade up elements
+  gsap.set('.gsap-fade-up', { y: 50, opacity: 0 })
+  ScrollTrigger.batch('.gsap-fade-up', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      y: 0, 
+      duration: 0.8,
+      stagger: 0.1, 
+      ease: 'power2.out',
+      overwrite: true
+    }),
+    start: 'top 90%',
+    once: true // Animate only once to save GPU memory on scroll
   })
 
-  gsap.fromTo('.testimonial-card',
-    { y: 50, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
+  // Feature cards optimized batch animation
+  gsap.set('.feature-card', { y: 50, opacity: 0 })
+  ScrollTrigger.batch('.feature-card', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      y: 0, 
       duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: '.testimonial-card',
-        start: 'top 85%',
-      }
-    }
-  )
+      stagger: 0.15, 
+      ease: 'power2.out',
+      overwrite: true
+    }),
+    start: 'top 90%',
+    once: true
+  })
 })
 </script>
 
@@ -205,5 +313,30 @@ onMounted(() => {
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
+}
+
+/* Custom Scrollbar for pricing table */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(211, 168, 95, 0.3); /* goldensand with opacity */
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(211, 168, 95, 0.8);
+}
+
+/* Hide scrollbar for carousel but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 </style>

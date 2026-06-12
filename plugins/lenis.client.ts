@@ -1,6 +1,10 @@
 import Lenis from 'lenis'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default defineNuxtPlugin((nuxtApp) => {
+  gsap.registerPlugin(ScrollTrigger)
+
   const lenis = new Lenis({
     lerp: 0.08,
     orientation: 'vertical',
@@ -12,12 +16,14 @@ export default defineNuxtPlugin((nuxtApp) => {
     infinite: false,
   })
 
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
+  // Synchronize Lenis with GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update)
 
-  requestAnimationFrame(raf)
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000)
+  })
+
+  gsap.ticker.lagSmoothing(0)
 
   // Integrate with vue-router
   nuxtApp.hook('page:finish', () => {
