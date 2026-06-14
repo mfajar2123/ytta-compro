@@ -44,9 +44,9 @@
             Offline Store
           </NuxtLink>
           
-          <a :href="siteData.company.contact.linktree" target="_blank" rel="noopener noreferrer" class="ml-4 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-blackobsidian bg-goldensand hover:bg-yellow-600 transition-colors duration-300">
+          <NuxtLink to="/contact-us" class="ml-4 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-blackobsidian bg-goldensand hover:bg-yellow-600 transition-colors duration-300">
             Contact Us
-          </a>
+          </NuxtLink>
         </nav>
 
         <!-- Mobile menu button -->
@@ -70,9 +70,9 @@
         
         <NuxtLink to="/offline-store" class="block px-3 py-2 rounded-md text-base font-medium hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">Offline Store</NuxtLink>
         
-        <a :href="siteData.company.contact.linktree" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 mt-4 rounded-md text-base font-medium text-center bg-goldensand text-blackobsidian">
+        <NuxtLink to="/contact-us" class="block px-3 py-2 mt-4 rounded-md text-base font-medium text-center bg-goldensand text-blackobsidian" @click="isMobileMenuOpen = false">
           Contact Us
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </header>

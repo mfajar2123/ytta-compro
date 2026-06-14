@@ -7,8 +7,8 @@
       </div>
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-4xl">
-          <h1 class="hero-title text-5xl md:text-7xl font-semibold mb-6 text-white tracking-tight">Kunjungi <span class="text-goldensand">Cabang Kami</span></h1>
-          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">Kami siap melayani kebutuhan investasi emas Anda secara langsung di cabang terdekat dengan standar kenyamanan dan keamanan premium.</p>
+          <h1 class="hero-title text-5xl md:text-7xl font-semibold mb-6 text-white tracking-tight">Our <span class="text-goldensand">Offline Store</span></h1>
+          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">Store Raja Emas Indonesia telah tersebar di 70 lokasi di seluruh Indonesia. Kunjungi store terdekat di kotamu untuk cek langsung keaslian logam mulia atau emas custom menggunakan mesin XRF dengan hasil akurat 100%.</p>
         </div>
       </div>
     </section>

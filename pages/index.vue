@@ -1,28 +1,65 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center bg-blackobsidian overflow-hidden">
-      <!-- Background Image with Overlay -->
-      <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=2000" alt="Gold Background" class="w-full h-full object-cover opacity-30" fetchpriority="high" />
-        <div class="absolute inset-0 bg-gradient-to-b from-blackobsidian/80 via-blackobsidian/50 to-blackobsidian"></div>
+    <section class="relative min-h-screen pt-24 pb-16 flex items-center justify-center bg-blackobsidian overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-goldensand/10 rounded-full blur-[150px] translate-x-1/4 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-darkamethyst/10 rounded-full blur-[150px] -translate-x-1/4 translate-y-1/4"></div>
       </div>
 
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h1 class="hero-title text-5xl md:text-7xl font-semibold text-white mb-6 tracking-tight">
-          <span class="block">Kemilau Emas,</span>
-          <span class="block text-goldensand mt-2">Masa Depan Cerah.</span>
-        </h1>
-        <p class="hero-text text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
-          {{ siteData.company.tagline }}
-        </p>
-        <div class="hero-cta flex flex-col sm:flex-row justify-center items-center gap-4">
-          <NuxtLink to="/products/logam-series" class="px-8 py-4 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-600 transition-colors duration-300 w-full sm:w-auto text-lg">
-            Koleksi Logam Series
-          </NuxtLink>
-          <NuxtLink to="/offline-store" class="px-8 py-4 border-2 border-goldensand text-goldensand font-bold rounded-full hover:bg-goldensand hover:text-blackobsidian transition-colors duration-300 w-full sm:w-auto text-lg">
-            Kunjungi Toko
-          </NuxtLink>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <!-- Text Content -->
+          <div class="max-w-2xl text-center lg:text-left order-2 lg:order-1 mx-auto lg:mx-0">
+            <div class="hero-title">
+              <h1 class="block text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-4 tracking-tight leading-tight">
+                About <br class="hidden lg:block"/>Emas Murni Asli
+              </h1>
+              <h2 class="block text-xl sm:text-2xl lg:text-3xl text-goldensand font-medium mb-6 lg:mb-8 leading-snug">
+                Exclusive Gifts for Meaningful Moments
+              </h2>
+            </div>
+            
+            <div class="hero-text space-y-4 text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+              <p>
+                <strong class="text-white font-medium">PT Emas Murni Asli</strong> adalah penyedia logam mulia 24 Karat (99,99%) yang dapat digunakan untuk hadiah (gift), apresiasi, penghargaan, souvenir, dan investasi. Melalui brand <strong class="text-white font-medium">Raja Emas Indonesia</strong>, kami menghadirkan berbagai pilihan <strong class="text-white font-medium">emas batangan</strong> serta <strong class="text-white font-medium">layanan custom</strong> yang dapat disesuaikan dengan kebutuhan individu, komunitas, perusahaan, maupun instansi.
+              </p>
+              <p>
+                Dengan mengutamakan kualitas, desain eksklusif, dan layanan profesional, kami membantu menciptakan hadiah emas yang tidak hanya berkesan, tetapi juga memiliki nilai yang bertahan dan terus berkembang dari waktu ke waktu.
+              </p>
+            </div>
+
+            <!-- CTAs -->
+            <div class="hero-cta flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <NuxtLink to="/products/logam-series" class="w-full sm:w-auto px-8 py-4 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-500 hover:shadow-[0_0_20px_rgba(211,168,95,0.4)] hover:-translate-y-1 transition-all duration-300 text-center">
+                Koleksi Logam Series
+              </NuxtLink>
+              <NuxtLink to="/offline-store" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-white/40 hover:-translate-y-1 transition-all duration-300 text-center">
+                Hubungi Kami
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Video Container -->
+          <div class="hero-video order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
+            <!-- Decorative Glow Behind Video -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-goldensand/40 via-transparent to-darkamethyst/40 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
+            
+            <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-blackobsidian shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
+              <video 
+                src="/vid/Vid_Compro.mp4" 
+                class="w-full h-auto max-h-[80vh] object-contain"
+                autoplay 
+                loop 
+                muted 
+                playsinline
+              ></video>
+              
+              <!-- Subtle inner shadow to blend video edges -->
+              <div class="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -42,14 +79,21 @@
 
     <!-- Partners Marquee -->
     <section class="py-16 bg-white border-y border-gray-200 overflow-hidden">
-      <div class="container mx-auto px-4 mb-8 text-center">
+      <div class="container mx-auto px-4 mb-10 text-center">
         <h3 class="text-xl font-semibold text-gray-500">Telah Dipercaya Oleh:</h3>
       </div>
-      <div class="relative w-full flex overflow-x-hidden">
-        <div class="animate-marquee whitespace-nowrap flex items-center gap-16 py-4">
-          <img v-for="(partner, index) in siteData.partners" :key="'p1-'+index" :src="partner.logo" :alt="partner.name" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" loading="lazy" width="150" height="80" />
-          <!-- Duplicate for infinite loop effect -->
-          <img v-for="(partner, index) in siteData.partners" :key="'p2-'+index" :src="partner.logo" :alt="partner.name" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" loading="lazy" width="150" height="80" />
+      <div class="relative flex w-full overflow-hidden group">
+        <!-- First Track -->
+        <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
+          <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
+            <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+          </div>
+        </div>
+        <!-- Second Track (Duplicate for infinite loop) -->
+        <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
+          <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
+            <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
@@ -87,74 +131,6 @@
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="py-24 bg-blackobsidian relative overflow-hidden border-t border-darkamethyst">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute top-1/4 left-0 w-96 h-96 bg-goldensand/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-darkamethyst/10 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="gsap-fade-up text-4xl md:text-5xl font-semibold mb-4 text-white">Harga Beli Emas <span class="text-goldensand">Hari Ini</span></h2>
-          <p class="gsap-fade-up text-gray-400 font-sans text-lg">Update terakhir: <span class="text-goldensand font-semibold">{{ siteData.pricing.lastUpdate }}</span></p>
-        </div>
-
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
-          <!-- Karat Table (Scrollable vertically) -->
-          <div class="gsap-fade-up w-full lg:w-1/2 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
-            <div class="bg-gradient-to-r from-goldensand to-yellow-600 p-6 text-center shrink-0">
-              <h3 class="text-xl font-bold text-blackobsidian uppercase tracking-wider">Kadar Karat</h3>
-            </div>
-            <div class="p-6 overflow-y-auto custom-scrollbar flex-grow">
-              <table class="w-full text-left font-sans text-white border-collapse">
-                <thead>
-                  <tr class="text-gray-400 text-sm border-b border-white/10">
-                    <th class="pb-3 font-medium">Kadar Karat</th>
-                    <th class="pb-3 font-medium text-right">Harga per Gram</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(item, index) in siteData.pricing.karat" :key="'karat-'+index" class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="py-4 font-semibold text-goldensand">{{ item.karat }}</td>
-                    <td class="py-4 text-right font-medium tracking-wide">{{ item.price }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Logam Mulia Table -->
-          <div class="gsap-fade-up w-full lg:w-1/2 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
-            <div class="bg-gradient-to-r from-gray-700 to-blackobsidian p-6 text-center border-b border-goldensand/30 shrink-0">
-              <h3 class="text-xl font-bold text-goldensand uppercase tracking-wider">Logam Mulia (S)</h3>
-            </div>
-            <div class="p-6 overflow-y-auto custom-scrollbar flex-grow">
-              <table class="w-full text-left font-sans text-white border-collapse">
-                <thead>
-                  <tr class="text-gray-400 text-sm border-b border-white/10">
-                    <th class="pb-3 font-medium">Jenis</th>
-                    <th class="pb-3 font-medium">Kadar</th>
-                    <th class="pb-3 font-medium text-right">Harga / Gr</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(item, index) in siteData.pricing.logamMulia" :key="'lm-'+index" class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="py-4">
-                      <span class="block font-semibold text-white">{{ item.name }}</span>
-                      <span v-if="item.karat !== '-'" class="text-xs text-goldensand">{{ item.karat }}</span>
-                    </td>
-                    <td class="py-4 text-gray-400">{{ item.purity }}</td>
-                    <td class="py-4 text-right font-medium text-goldensand">{{ item.price }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Testimonials (Swipeable Carousel) -->
     <section class="py-24 bg-whitedust relative overflow-hidden">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
@@ -175,49 +151,54 @@
       <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
         <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
           <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
-            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-cover" loading="lazy" />
+            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Add Review External Link CTA -->
-    <section class="py-24 bg-goldensand relative overflow-hidden">
-      <!-- Decorative background element -->
-      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at center, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
-      
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="bg-blackobsidian text-white rounded-[2.5rem] p-10 md:p-16 lg:p-20 text-center max-w-5xl mx-auto shadow-2xl border border-white/5 relative overflow-hidden group">
-          
-          <!-- Inner Glow -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] md:w-full h-1/2 bg-goldensand/20 blur-[100px] pointer-events-none"></div>
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white relative overflow-hidden border-t border-gray-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl">
+        <div class="text-center mb-16 gsap-fade-up">
+          <!-- <span class="inline-block py-1.5 px-4 rounded-full bg-whitedust border border-gray-200 text-goldensand text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
+            Pertanyaan Umum
+          </span> -->
+          <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-blackobsidian tracking-tight">
+            <span class="text-goldensand">Pertanyaan</span> yang Sering Diajukan
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto text-lg font-sans">
+            Temukan jawaban atas pertanyaan yang paling sering diajukan seputar layanan pembelian, penjualan, dan pengecekan emas di Raja Emas Indonesia.
+          </p>
+        </div>
 
-          <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="gsap-fade-up text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight">
-              Bagikan <span class="text-goldensand">Pengalaman Berharga</span> Anda
-            </h2>
-            <p class="gsap-fade-up text-lg md:text-xl text-gray-300 mb-12 font-sans leading-relaxed">
-              Testimoni Anda sangat berarti bagi kami. Bantu calon investor lainnya membuat keputusan yang tepat dengan membagikan pengalaman transaksi emas Anda di platform favorit Indonesia.
-            </p>
-            
-            <div class="gsap-fade-up flex flex-col sm:flex-row justify-center gap-6">
-              <!-- Google CTA -->
-              <a href="#" class="flex items-center justify-center gap-4 bg-white text-blackobsidian px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.3)] group/btn">
-                <Icon name="logos:google-icon" class="text-2xl group-hover/btn:scale-110 transition-transform" />
-                <div class="text-left">
-                  <span class="block text-xs text-gray-500 font-sans uppercase tracking-wider mb-0.5">Ulas Kami Di</span>
-                  <span class="block text-lg font-heading">Google Maps</span>
-                </div>
-              </a>
-
-              <!-- Shopee CTA -->
-              <a href="#" class="flex items-center justify-center gap-4 bg-[#EE4D2D] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-[#d74226] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(238,77,45,0.4)] group/btn">
-                <Icon name="simple-icons:shopee" class="text-3xl group-hover/btn:scale-110 transition-transform" />
-                <div class="text-left">
-                  <span class="block text-xs text-white/80 font-sans uppercase tracking-wider mb-0.5">Ulas Kami Di</span>
-                  <span class="block text-lg font-heading">Shopee ID</span>
-                </div>
-              </a>
+        <div class="space-y-4 gsap-fade-up">
+          <div 
+            v-for="(faq, index) in faqs" 
+            :key="index"
+            class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 bg-white"
+            :class="{'ring-1 ring-goldensand shadow-lg': activeFaq === index}"
+          >
+            <button 
+              @click="toggleFaq(index)"
+              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-whitedust/50 transition-colors"
+            >
+              <h3 class="font-semibold text-lg text-blackobsidian pr-8" :class="{'text-goldensand': activeFaq === index}">
+                {{ faq.question }}
+              </h3>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300" :class="activeFaq === index ? 'rotate-180 border-goldensand bg-goldensand text-white' : 'border-gray-300 text-gray-500 bg-white'">
+                <Icon name="mdi:chevron-down" class="text-xl" />
+              </div>
+            </button>
+            <div 
+              class="overflow-hidden transition-all duration-300 ease-in-out"
+              :style="{ maxHeight: activeFaq === index ? '500px' : '0', opacity: activeFaq === index ? 1 : 0 }"
+            >
+              <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                <p class="text-gray-600 font-sans leading-relaxed">
+                  {{ faq.answer }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -235,6 +216,35 @@ import siteData from '~/data/siteData.json'
 gsap.registerPlugin(ScrollTrigger)
 
 const testiContainer = ref(null)
+
+const activeFaq = ref(null)
+
+const toggleFaq = (index) => {
+  activeFaq.value = activeFaq.value === index ? null : index
+}
+
+const faqs = [
+  {
+    question: "Apakah Raja Emas melayani pembelian emas tanpa surat?",
+    answer: "Ya, kami menerima pembelian emas dalam segala kondisi, termasuk emas tanpa sertifikat atau surat pembelian awal, emas patah, dan emas rusak dengan harga yang transparan dan kompetitif."
+  },
+  {
+    question: "Bagaimana proses pengecekan kadar emas dilakukan?",
+    answer: "Kami menggunakan teknologi XRF (X-Ray Fluorescence) mutakhir buatan Amerika Serikat yang dapat mengecek kemurnian kadar emas secara cepat, sangat akurat, dan tanpa merusak fisik logam mulia Anda."
+  },
+  {
+    question: "Apakah harga beli emas yang ditawarkan sesuai standar pasar?",
+    answer: "Harga beli (buyback) kami sangat kompetitif dan selalu disesuaikan secara real-time dengan pergerakan harga emas dunia. Kami berkomitmen memberikan nilai maksimal untuk setiap aset Anda tanpa potongan tersembunyi."
+  },
+  {
+    question: "Di mana saja lokasi cabang resmi Raja Emas Indonesia?",
+    answer: "Saat ini kami memiliki lebih dari 68 cabang resmi yang tersebar di berbagai kota besar di seluruh Indonesia. Anda dapat mengunjungi halaman Lokasi Store untuk menemukan outlet yang terdekat dari lokasi Anda."
+  },
+  {
+    question: "Apakah Raja Emas melayani pembuatan emas custom untuk perusahaan?",
+    answer: "Tentu. Kami melayani pembuatan logam mulia secara custom untuk kebutuhan corporate, seperti pin karyawan, medali penghargaan, dan souvenir eksklusif perusahaan dengan kualitas emas 24 karat."
+  }
+]
 
 const scrollTesti = (direction) => {
   if (testiContainer.value) {
@@ -258,18 +268,23 @@ onMounted(() => {
   // Hero Animations
   const tl = gsap.timeline()
   
-  tl.fromTo('.hero-title .block', 
-    { y: 100, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power4.out', delay: 0.2 }
+  tl.fromTo('.hero-video',
+    { x: 50, opacity: 0, scale: 0.95 },
+    { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
   )
-  .fromTo('.hero-text',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
-    "-=0.5"
+  .fromTo('.hero-title .block', 
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' },
+    "-=0.8"
   )
-  .fromTo('.hero-cta',
+  .fromTo('.hero-text p',
     { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
+    "-=0.6"
+  )
+  .fromTo('.hero-cta a',
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
     "-=0.6"
   )
 
@@ -306,13 +321,17 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.animate-marquee {
-  animation: marquee 25s linear infinite;
+.animate-marquee-infinite {
+  animation: marquee-infinite 35s linear infinite;
 }
 
-@keyframes marquee {
+.group:hover .animate-marquee-infinite {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-infinite {
   0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Custom Scrollbar for pricing table */

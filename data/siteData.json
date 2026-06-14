@@ -62,36 +62,134 @@
   "pricing": {
     "lastUpdate": "12 Juni 2026 16.51.52",
     "karat": [
-      { "karat": "K24*", "price": "Rp 2.340.000" },
-      { "karat": "K24 (99.5%)", "price": "Rp 2.290.000" },
-      { "karat": "K23", "price": "Rp 2.045.000" },
-      { "karat": "K22", "price": "Rp 1.873.000" },
-      { "karat": "K21", "price": "Rp 1.789.000" },
-      { "karat": "K20", "price": "Rp 1.703.000" },
-      { "karat": "K19", "price": "Rp 1.617.000" },
-      { "karat": "K18", "price": "Rp 1.534.000" },
-      { "karat": "K17", "price": "Rp 1.448.000" },
-      { "karat": "K16", "price": "Rp 1.362.000" },
-      { "karat": "K15", "price": "Rp 1.278.000" },
-      { "karat": "K14", "price": "Rp 1.193.000" },
-      { "karat": "K13", "price": "Rp 1.107.000" },
-      { "karat": "K12", "price": "Rp 1.023.000" },
-      { "karat": "K11", "price": "Rp 937.000" },
-      { "karat": "K10", "price": "Rp 852.000" },
-      { "karat": "K9", "price": "Rp 768.000" },
-      { "karat": "K8", "price": "Rp 682.000" },
-      { "karat": "K7", "price": "Rp 596.000" },
-      { "karat": "K6", "price": "Rp 515.000" },
-      { "karat": "K5", "price": "Rp 425.000" }
+      {
+        "karat": "K24*",
+        "price": "Rp 2.340.000"
+      },
+      {
+        "karat": "K24 (99.5%)",
+        "price": "Rp 2.290.000"
+      },
+      {
+        "karat": "K23",
+        "price": "Rp 2.045.000"
+      },
+      {
+        "karat": "K22",
+        "price": "Rp 1.873.000"
+      },
+      {
+        "karat": "K21",
+        "price": "Rp 1.789.000"
+      },
+      {
+        "karat": "K20",
+        "price": "Rp 1.703.000"
+      },
+      {
+        "karat": "K19",
+        "price": "Rp 1.617.000"
+      },
+      {
+        "karat": "K18",
+        "price": "Rp 1.534.000"
+      },
+      {
+        "karat": "K17",
+        "price": "Rp 1.448.000"
+      },
+      {
+        "karat": "K16",
+        "price": "Rp 1.362.000"
+      },
+      {
+        "karat": "K15",
+        "price": "Rp 1.278.000"
+      },
+      {
+        "karat": "K14",
+        "price": "Rp 1.193.000"
+      },
+      {
+        "karat": "K13",
+        "price": "Rp 1.107.000"
+      },
+      {
+        "karat": "K12",
+        "price": "Rp 1.023.000"
+      },
+      {
+        "karat": "K11",
+        "price": "Rp 937.000"
+      },
+      {
+        "karat": "K10",
+        "price": "Rp 852.000"
+      },
+      {
+        "karat": "K9",
+        "price": "Rp 768.000"
+      },
+      {
+        "karat": "K8",
+        "price": "Rp 682.000"
+      },
+      {
+        "karat": "K7",
+        "price": "Rp 596.000"
+      },
+      {
+        "karat": "K6",
+        "price": "Rp 515.000"
+      },
+      {
+        "karat": "K5",
+        "price": "Rp 425.000"
+      }
     ],
     "logamMulia": [
-      { "name": "LM ANTAM BARU", "purity": "99.99%", "price": "Rp 2.385.000", "karat": "K24" },
-      { "name": "LM ANTAM LAMA", "purity": "99.99%", "price": "Rp 2.340.000", "karat": "K24" },
-      { "name": "LM NON SERTIF", "purity": "99.99%", "price": "Rp 2.300.000", "karat": "K24" },
-      { "name": "RHODIUM (Rh)", "purity": "99.99%", "price": "Rp 2.750.000", "karat": "-" },
-      { "name": "PALADIUM (Pd)", "purity": "99.99%", "price": "Rp 500.000", "karat": "-" },
-      { "name": "PLATINUM (Pt)", "purity": "99.99%", "price": "Rp 675.000", "karat": "-" },
-      { "name": "PERAK", "purity": "99.99%", "price": "Rp 30.000", "karat": "-" }
+      {
+        "name": "LM ANTAM BARU",
+        "purity": "99.99%",
+        "price": "Rp 2.385.000",
+        "karat": "K24"
+      },
+      {
+        "name": "LM ANTAM LAMA",
+        "purity": "99.99%",
+        "price": "Rp 2.340.000",
+        "karat": "K24"
+      },
+      {
+        "name": "LM NON SERTIF",
+        "purity": "99.99%",
+        "price": "Rp 2.300.000",
+        "karat": "K24"
+      },
+      {
+        "name": "RHODIUM (Rh)",
+        "purity": "99.99%",
+        "price": "Rp 2.750.000",
+        "karat": "-"
+      },
+      {
+        "name": "PALADIUM (Pd)",
+        "purity": "99.99%",
+        "price": "Rp 500.000",
+        "karat": "-"
+      },
+      {
+        "name": "PLATINUM (Pt)",
+        "purity": "99.99%",
+        "price": "Rp 675.000",
+        "karat": "-"
+      },
+      {
+        "name": "PERAK",
+        "purity": "99.99%",
+        "price": "Rp 30.000",
+        "karat": "-"
+      }
     ]
   },
   "testimonials": [
@@ -102,7 +200,7 @@
     },
     {
       "id": "rev-2",
-      "image": "/img/review/review-shopee-2.jpeg",
+      "image": "/img/review/review-wa-1.jpeg",
       "platform": "Shopee"
     },
     {
@@ -119,6 +217,16 @@
       "id": "rev-5",
       "image": "/img/review/review-shopee-5.jpeg",
       "platform": "Shopee"
+    },
+    {
+      "id": "rev-6",
+      "image": "/img/review/review-shopee-2.jpeg",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-7",
+      "image": "/img/review/review-wa-2.jpeg",
+      "platform": "WhatsApp"
     }
   ],
   "products": {

@@ -13,17 +13,17 @@
             {{ siteData.company.tagline }}
           </p>
           <div class="flex space-x-4 pt-4">
-            <a href="#" class="text-gray-400 hover:text-goldensand transition-colors">
-              <span class="sr-only">Facebook</span>
-              <Icon name="mdi:facebook" class="text-2xl" />
-            </a>
-            <a href="#" class="text-gray-400 hover:text-goldensand transition-colors">
+            <a href="https://instagram.com/emasmurniasli.id/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-goldensand transition-colors">
               <span class="sr-only">Instagram</span>
               <Icon name="mdi:instagram" class="text-2xl" />
             </a>
-            <a href="#" class="text-gray-400 hover:text-goldensand transition-colors">
-              <span class="sr-only">LinkedIn</span>
-              <Icon name="mdi:linkedin" class="text-2xl" />
+            <a href="https://www.tiktok.com/@emasmurniasli_" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-goldensand transition-colors">
+              <span class="sr-only">TikTok</span>
+              <Icon name="simple-icons:tiktok" class="text-2xl" />
+            </a>
+            <a href="https://shopee.co.id/emaindonesia" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-goldensand transition-colors">
+              <span class="sr-only">Shopee</span>
+              <Icon name="simple-icons:shopee" class="text-2xl" />
             </a>
           </div>
         </div>
@@ -64,8 +64,7 @@
       <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
         <p>&copy; {{ new Date().getFullYear() }} {{ siteData.company.name }}. All rights reserved.</p>
         <div class="mt-4 md:mt-0 space-x-4">
-          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <NuxtLink to="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</NuxtLink>
         </div>
       </div>
     </div>
