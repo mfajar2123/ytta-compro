@@ -9,9 +9,9 @@
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <Icon name="mdi:gold" class="text-3xl text-goldensand" />
+            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" />
             <span class="font-semibold text-xl tracking-tight text-white font-heading">
-              Raja Emas
+              Raja Emas Indonesia
             </span>
           </NuxtLink>
         </div>

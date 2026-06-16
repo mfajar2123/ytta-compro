@@ -6,8 +6,8 @@
         <!-- Brand -->
         <div class="space-y-4">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <Icon name="mdi:gold" class="text-4xl text-goldensand" />
-            <span class="font-semibold text-2xl tracking-tight text-white font-heading">Raja Emas</span>
+            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" />
+            <span class="font-semibold text-2xl tracking-tight text-white font-heading">Raja Emas Indonesia</span>
           </NuxtLink>
           <p class="text-gray-400 max-w-sm">
             {{ siteData.company.tagline }}

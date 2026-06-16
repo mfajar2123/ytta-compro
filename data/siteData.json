@@ -882,6 +882,15 @@
       "hours": "10.00-20.00 WITA",
       "note": "BUKA SETIAP HARI",
       "mapCoordinates": "https://maps.app.goo.gl/4Dg5eeQqbGJpXK8w9"
+    },
+    {
+      "id": "st-69",
+      "name": "Dramaga Bogor",
+      "address": "Jl. Raya Cibanteng, Cibanteng, Ciampea, Bogor Jabar (samping nasi kebuli yaman)",
+      "phone": "0822-9999-7041",
+      "hours": "10.00-20.00 WIB",
+      "note": "BUKA SETIAP HARI",
+      "mapCoordinates": "https://maps.app.goo.gl/xoNwHtyN8g5wMpYs6"
     }
   ]
 }

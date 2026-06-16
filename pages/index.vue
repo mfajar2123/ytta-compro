@@ -64,35 +64,68 @@
       </div>
     </section>
 
-    <!-- Company Profile / About -->
-    <section class="py-24 bg-whitedust">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="gsap-fade-up text-sm font-semibold text-goldensand tracking-widest uppercase mb-4">Tentang Kami</h2>
-          <p class="gsap-fade-up text-2xl md:text-4xl font-light text-blackobsidian leading-relaxed mb-8">
-            "{{ siteData.company.about }}"
-          </p>
-          <div class="gsap-fade-up w-24 h-1 bg-goldensand mx-auto"></div>
+    <!-- About Slider -->
+    <section class="relative w-full overflow-hidden bg-blackobsidian group">
+      <div 
+        class="flex transition-transform duration-700 ease-in-out h-[60vh] sm:h-[80vh] md:h-screen"
+        :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+      >
+        <div 
+          v-for="(img, idx) in sliderImages" 
+          :key="'slide-'+idx"
+          class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian"
+        >
+          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-cover" loading="lazy" />
         </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button 
+        aria-label="Previous Slide"
+        @click="prevSlide"
+        class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40 backdrop-blur-md border-2 border-white/20 text-white flex items-center justify-center hover:bg-goldensand hover:border-goldensand hover:scale-110 transition-all duration-300 z-10 opacity-0 group-hover:opacity-100 shadow-xl focus:outline-none"
+      >
+        <Icon name="mdi:chevron-left" class="text-3xl md:text-4xl" />
+      </button>
+      <button 
+        aria-label="Next Slide"
+        @click="nextSlide"
+        class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40 backdrop-blur-md border-2 border-white/20 text-white flex items-center justify-center hover:bg-goldensand hover:border-goldensand hover:scale-110 transition-all duration-300 z-10 opacity-0 group-hover:opacity-100 shadow-xl focus:outline-none"
+      >
+        <Icon name="mdi:chevron-right" class="text-3xl md:text-4xl" />
+      </button>
+
+      <!-- Indicators -->
+      <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 md:space-x-4 z-10">
+        <button 
+          v-for="(_, idx) in sliderImages" 
+          :key="'dot-'+idx"
+          @click="currentSlide = idx"
+          aria-label="Go to slide"
+          class="h-2 md:h-2.5 rounded-full transition-all duration-300 focus:outline-none shadow-lg"
+          :class="currentSlide === idx ? 'bg-goldensand w-8 md:w-12' : 'bg-white/50 hover:bg-white w-2 md:w-2.5'"
+        ></button>
       </div>
     </section>
 
     <!-- Partners Marquee -->
-    <section class="py-16 bg-white border-y border-gray-200 overflow-hidden">
-      <div class="container mx-auto px-4 mb-10 text-center">
-        <h3 class="text-xl font-semibold text-gray-500">Telah Dipercaya Oleh:</h3>
-      </div>
-      <div class="relative flex w-full overflow-hidden group">
-        <!-- First Track -->
-        <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
-          <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-            <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
-          </div>
+    <section class="py-16 bg-whitedust border-b border-gray-200">
+      <div class="w-full overflow-hidden">
+        <div class="container mx-auto px-4 mb-8 text-center">
+          <h3 class="text-xl font-semibold text-gray-500">Telah Dipercaya Oleh:</h3>
         </div>
-        <!-- Second Track (Duplicate for infinite loop) -->
-        <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
-          <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-            <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+        <div class="relative flex w-full overflow-hidden group">
+          <!-- First Track -->
+          <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
+            <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
+              <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+            </div>
+          </div>
+          <!-- Second Track (Duplicate for infinite loop) -->
+          <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
+            <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
+              <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -165,16 +198,29 @@
             Pertanyaan Umum
           </span> -->
           <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-blackobsidian tracking-tight">
-            <span class="text-goldensand">Pertanyaan</span> yang Sering Diajukan
+            <span class="text-goldensand">Frequently Ask Question</span> (FAQ)
           </h2>
           <p class="text-gray-500 max-w-2xl mx-auto text-lg font-sans">
             Temukan jawaban atas pertanyaan yang paling sering diajukan seputar layanan pembelian, penjualan, dan pengecekan emas di Raja Emas Indonesia.
           </p>
         </div>
 
+        <!-- FAQ Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 gsap-fade-up">
+          <button 
+            v-for="(_, category) in faqs" 
+            :key="category"
+            @click="activeCategory = category; activeFaq = null"
+            class="px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border-2 text-sm sm:text-base"
+            :class="activeCategory === category ? 'bg-goldensand border-goldensand text-white shadow-md' : 'bg-transparent border-gray-200 text-gray-500 hover:border-goldensand hover:text-goldensand'"
+          >
+            {{ category }}
+          </button>
+        </div>
+
         <div class="space-y-4 gsap-fade-up">
           <div 
-            v-for="(faq, index) in faqs" 
+            v-for="(faq, index) in faqs[activeCategory]" 
             :key="index"
             class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 bg-white"
             :class="{'ring-1 ring-goldensand shadow-lg': activeFaq === index}"
@@ -217,34 +263,71 @@ gsap.registerPlugin(ScrollTrigger)
 
 const testiContainer = ref(null)
 
+const sliderImages = [
+  'Page1.png',
+  'page2.png',
+  'page3.png',
+  'page4.png',
+  'page5.png'
+]
+const currentSlide = ref(0)
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % sliderImages.length
+}
+const prevSlide = () => {
+  currentSlide.value = (currentSlide.value - 1 + sliderImages.length) % sliderImages.length
+}
+
+const activeCategory = ref('Product')
 const activeFaq = ref(null)
 
 const toggleFaq = (index) => {
   activeFaq.value = activeFaq.value === index ? null : index
 }
 
-const faqs = [
-  {
-    question: "Apakah Raja Emas melayani pembelian emas tanpa surat?",
-    answer: "Ya, kami menerima pembelian emas dalam segala kondisi, termasuk emas tanpa sertifikat atau surat pembelian awal, emas patah, dan emas rusak dengan harga yang transparan dan kompetitif."
-  },
-  {
-    question: "Bagaimana proses pengecekan kadar emas dilakukan?",
-    answer: "Kami menggunakan teknologi XRF (X-Ray Fluorescence) mutakhir buatan Amerika Serikat yang dapat mengecek kemurnian kadar emas secara cepat, sangat akurat, dan tanpa merusak fisik logam mulia Anda."
-  },
-  {
-    question: "Apakah harga beli emas yang ditawarkan sesuai standar pasar?",
-    answer: "Harga beli (buyback) kami sangat kompetitif dan selalu disesuaikan secara real-time dengan pergerakan harga emas dunia. Kami berkomitmen memberikan nilai maksimal untuk setiap aset Anda tanpa potongan tersembunyi."
-  },
-  {
-    question: "Di mana saja lokasi cabang resmi Raja Emas Indonesia?",
-    answer: "Saat ini kami memiliki lebih dari 68 cabang resmi yang tersebar di berbagai kota besar di seluruh Indonesia. Anda dapat mengunjungi halaman Lokasi Store untuk menemukan outlet yang terdekat dari lokasi Anda."
-  },
-  {
-    question: "Apakah Raja Emas melayani pembuatan emas custom untuk perusahaan?",
-    answer: "Tentu. Kami melayani pembuatan logam mulia secara custom untuk kebutuhan corporate, seperti pin karyawan, medali penghargaan, dan souvenir eksklusif perusahaan dengan kualitas emas 24 karat."
-  }
-]
+const faqs = {
+  "Product": [
+    { question: "Apakah produk Logam Mulia Raja Emas Indonesia terbuat dari emas asli?", answer: "Ya. Seluruh produk Logam Mulia Raja Emas Indonesia dibuat menggunakan emas murni 24 Karat (99,9%) dengan kualitas yang terjamin." },
+    { question: "Apakah setiap Logam Mulia Raja Emas Indonesia dilengkapi sertifikat atau tanda autentikasi?", answer: "Ya. Setiap produk dilengkapi dengan sertifikat keaslian." },
+    { question: "Apakah Logam Mulia Raja Emas Indonesia bisa dicustom?", answer: "Ya. PT Emas Murni Asli melayani pembuatan Logam Mulia Custom untuk kebutuhan perusahaan, instansi, komunitas, maupun personal." },
+    { question: "Apakah customer bisa memilih desain dan ukuran Logam Mulia Custom?", answer: "Ya. Customer dapat menentukan desain, bentuk, ukuran, gramasi, serta spesifikasi produk sesuai kebutuhan." },
+    { question: "Apakah proses custom dapat mengurangi gramasi emas?", answer: "Tidak. Gramasi emas akan tetap mengikuti spesifikasi yang telah disepakati pada saat pemesanan." },
+    { question: "Apakah bisa custom gramasi selain yang tersedia?", answer: "Ya. Untuk kebutuhan tertentu, customer dapat berkonsultasi dengan tim kami terkait gramasi yang diinginkan." },
+    { question: "Apakah bisa custom bentuk logam mulia selain yang tersedia?", answer: "Ya. Kami dapat membantu memproduksi berbagai bentuk dan desain custom sesuai kebutuhan dan identitas customer." },
+    { question: "Apakah bisa custom produk dengan kadar emas selain 24 Karat (99,9%)?", answer: "Untuk informasi terkait ketersediaan kadar emas selain 24 Karat, silahkan konsultasikan langsung dengan tim kami." },
+    { question: "Apakah ada tambahan biaya untuk custom desain?", answer: "Biaya akan disesuaikan dengan tingkat kompleksitas desain, gramasi, jumlah pesanan, dan spesifikasi produk yang diminta." },
+    { question: "Apakah customer bisa melihat preview desain sebelum produksi?", answer: "Ya. Tim kami akan memberikan desain atau mockup terlebih dahulu untuk mendapatkan persetujuan sebelum proses produksi dimulai." },
+    { question: "Apakah bisa custom warna pada produk?", answer: "Warna produk mengikuti karakteristik logam mulia yang digunakan. Untuk kebutuhan khusus, silahkan konsultasikan dengan tim kami." },
+    { question: "Apakah PT Emas Murni Asli menyediakan katalog desain jika customer belum memiliki desain sendiri?", answer: "Ya. Kami memiliki berbagai referensi desain yang dapat dijadikan inspirasi atau disesuaikan dengan kebutuhan customer." },
+    { question: "Apakah ada contoh foto produk dan hasil jadi untuk berbagai bentuk dan gramasi?", answer: "Ya. Customer dapat melihat portofolio dan contoh hasil produksi melalui website, media sosial, atau langsung berkonsultasi dengan tim kami." },
+    { question: "Berapa ukuran standar setiap bentuk dan gramasi Logam Mulia Raja Emas Indonesia?", answer: "Ukuran produk akan menyesuaikan dengan gramasi dan desain yang dipilih. Informasi detail dapat diperoleh melalui tim customer service kami." },
+    { question: "Packaging apa yang akan didapat pada setiap pembelian?", answer: "Setiap pembelian Logam Mulia Raja Emas Indonesia dilengkapi dengan packaging premium berbahan akrilik, invoice pembelian, thank you card." },
+    { question: "Apakah tersedia pilihan packaging selain packaging standar?", answer: "Untuk kebutuhan khusus atau pesanan custom, customer dapat berkonsultasi dengan tim kami terkait pilihan packaging yang tersedia." },
+    { question: "Apakah produk Logam Mulia Raja Emas Indonesia dapat dijual kembali di masa depan?", answer: "Ya. Sebagai produk logam mulia, emas memiliki nilai yang dapat diperjualbelikan kembali sesuai ketentuan dan harga pasar yang berlaku." },
+    { question: "Bagaimana dengan harga buyback?", answer: "Harga buyback mengikuti harga buyback nasional serta menyesuaikan kebijakan perusahaan." },
+    { question: "Bagaimana cara melakukan buyback Logam Mulia Raja Emas Indonesia?", answer: "Customer dapat mengunjungi cabang Raja Emas Indonesia terdekat untuk mendapatkan informasi dan prosedur buyback yang berlaku." }
+  ],
+  "Order": [
+    { question: "Bagaimana cara melakukan pemesanan produk Logam Mulia Raja Emas Indonesia?", answer: "Pemesanan dapat dilakukan melalui WhatsApp yang tertera." },
+    { question: "Berapa lama waktu pengerjaan produk custom?", answer: "Waktu pengerjaan produk custom 14 hari - 1 bulan tidak termasuk sabtu, minggu, dan hari libur nasional serta disesuaikan juga dengan bentuk dan jumlah pesanan." },
+    { question: "Apakah ada jumlah minimum pemesanan untuk produk custom?", answer: "Tidak ada minimal order." }
+  ],
+  "Price & Payment": [
+    { question: "Bagaimana cara pembayaran pemesanan?", answer: "Kami menerima berbagai metode pembayaran, termasuk transfer bank, kartu debit/kredit, dan metode pembayaran lainnya yang tersedia sesuai ketentuan perusahaan." },
+    { question: "Apakah bisa pembayaran secara tempo?", answer: "Untuk informasi mengenai pembayaran tempo atau termin pembayaran, silahkan menghubungi tim kami. Ketentuan pembayaran akan disesuaikan dengan jenis pesanan dan kebijakan perusahaan yang berlaku." },
+    { question: "Di mana saya bisa melihat harga terbaru yang berlaku hari ini?", answer: "Untuk mendapatkan informasi harga terbaru, bisa kunjungi instagram emasmurniasli.id dan website emasmurniasli.id atau silahkan menghubungi tim kami untuk update seputar harga custom." },
+    { question: "Promo apa saja yang sedang berlaku dan bagaimana cara mendapatkannya?", answer: "Informasi seputar promo dapat diperoleh melalui WhatsApp, Marketplace Official, dan social media Emas Murni Asli." },
+    { question: "Apakah tersedia pembayaran DP untuk pesanan Logam Mulia?", answer: "Ya. Ketentuan pembayaran DP ada di 70% dan pelunasan pada saat barang diterima." }
+  ],
+  "Delivery": [
+    { question: "Apakah PT Emas Murni Asli bisa mengirim produk ke seluruh Indonesia?", answer: "Ya. PT Emas Murni Asli melayani pengiriman produk ke seluruh wilayah Indonesia melalui jasa pengiriman yang aman dan terpercaya." },
+    { question: "Untuk pengiriman, menggunakan jasa pengiriman apa saja?", answer: "Kami bekerja sama dengan beberapa jasa pengiriman terpercaya seperti JNE serta memiliki kurir internal." },
+    { question: "Apakah pengiriman produk logam mulia aman?", answer: "Ya. Setiap produk akan dikemas dengan aman menggunakan packaging premium dan melalui proses pengecekan sebelum dikirim. Kami juga bekerja sama dengan jasa pengiriman terpercaya untuk menjaga keamanan produk selama proses pengiriman." },
+    { question: "Bagaimana cara melacak pesanan?", answer: "Setelah pesanan dikirim, customer akan mendapatkan nomor resi yang dapat digunakan untuk memantau status pengiriman melalui layanan kurir." },
+    { question: "Apakah PT Emas Murni Asli memiliki toko atau offline store?", answer: "Ya. PT Emas Murni Asli memiliki offline store bernama Raja Emas Indonesia dan dapat dikunjungi langsung oleh pelanggan untuk melihat produk, berkonsultasi, maupun melakukan transaksi secara langsung." }
+  ]
+}
 
 const scrollTesti = (direction) => {
   if (testiContainer.value) {
