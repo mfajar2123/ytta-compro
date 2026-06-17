@@ -47,14 +47,13 @@
             <div class="absolute -inset-4 bg-gradient-to-tr from-goldensand/40 via-transparent to-darkamethyst/40 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
             
             <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-blackobsidian shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
-              <video 
-                src="/vid/Vid_Compro.mp4" 
-                class="w-full h-auto max-h-[80vh] object-contain"
-                autoplay 
-                loop 
-                muted 
-                playsinline
-              ></video>
+              <iframe
+                src="https://www.youtube.com/embed/_DMsSlzT9T0?autoplay=1&mute=1&loop=1&playlist=_DMsSlzT9T0&controls=0&rel=0"
+                class="w-full aspect-video max-h-[80vh]"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
               
               <!-- Subtle inner shadow to blend video edges -->
               <div class="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] pointer-events-none"></div>
@@ -71,11 +70,11 @@
         :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
       >
         <div 
-          v-for="(img, idx) in sliderImages" 
+          v-for="(img, idx) in siteData.heroSlider" 
           :key="'slide-'+idx"
           class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian"
         >
-          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-cover" loading="lazy" />
+          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-contain" loading="lazy" width="1920" height="1080" />
         </div>
       </div>
       
@@ -98,7 +97,7 @@
       <!-- Indicators -->
       <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 md:space-x-4 z-10">
         <button 
-          v-for="(_, idx) in sliderImages" 
+          v-for="(_, idx) in siteData.heroSlider" 
           :key="'dot-'+idx"
           @click="currentSlide = idx"
           aria-label="Go to slide"
@@ -118,13 +117,13 @@
           <!-- First Track -->
           <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
             <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+              <img :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" width="200" height="100" />
             </div>
           </div>
           <!-- Second Track (Duplicate for infinite loop) -->
           <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
             <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <img :src="`/img/home/partner/${(i - 1) % 4 + 1}.png`" alt="Partner Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" />
+              <img :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" width="200" height="100" />
             </div>
           </div>
         </div>
@@ -184,7 +183,7 @@
       <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
         <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
           <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
-            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" />
+            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" width="400" height="400" />
           </div>
         </div>
       </div>
@@ -206,21 +205,21 @@
         </div>
 
         <!-- FAQ Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 gsap-fade-up">
+        <div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4 px-4 -mx-4 justify-start md:justify-center mb-10 gsap-fade-up">
           <button 
-            v-for="(_, category) in faqs" 
+            v-for="(_, category) in siteData.faqs" 
             :key="category"
             @click="activeCategory = category; activeFaq = null"
-            class="px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border-2 text-sm sm:text-base"
+            class="px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border-2 text-sm sm:text-base whitespace-nowrap"
             :class="activeCategory === category ? 'bg-goldensand border-goldensand text-white shadow-md' : 'bg-transparent border-gray-200 text-gray-500 hover:border-goldensand hover:text-goldensand'"
           >
             {{ category }}
           </button>
         </div>
 
-        <div class="space-y-4 gsap-fade-up">
+        <div class="space-y-4 max-w-4xl mx-auto gsap-fade-up">
           <div 
-            v-for="(faq, index) in faqs[activeCategory]" 
+            v-for="(faq, index) in siteData.faqs[activeCategory]" 
             :key="index"
             class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 bg-white"
             :class="{'ring-1 ring-goldensand shadow-lg': activeFaq === index}"
@@ -262,71 +261,20 @@ import siteData from '~/data/siteData.json'
 gsap.registerPlugin(ScrollTrigger)
 
 const testiContainer = ref(null)
-
-const sliderImages = [
-  'Page1.png',
-  'page2.png',
-  'page3.png',
-  'page4.png',
-  'page5.png'
-]
 const currentSlide = ref(0)
 
 const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % sliderImages.length
+  currentSlide.value = (currentSlide.value + 1) % siteData.heroSlider.length
 }
 const prevSlide = () => {
-  currentSlide.value = (currentSlide.value - 1 + sliderImages.length) % sliderImages.length
+  currentSlide.value = currentSlide.value === 0 ? siteData.heroSlider.length - 1 : currentSlide.value - 1
 }
 
-const activeCategory = ref('Product')
+const activeCategory = ref(Object.keys(siteData.faqs)[0])
 const activeFaq = ref(null)
 
 const toggleFaq = (index) => {
   activeFaq.value = activeFaq.value === index ? null : index
-}
-
-const faqs = {
-  "Product": [
-    { question: "Apakah produk Logam Mulia Raja Emas Indonesia terbuat dari emas asli?", answer: "Ya. Seluruh produk Logam Mulia Raja Emas Indonesia dibuat menggunakan emas murni 24 Karat (99,9%) dengan kualitas yang terjamin." },
-    { question: "Apakah setiap Logam Mulia Raja Emas Indonesia dilengkapi sertifikat atau tanda autentikasi?", answer: "Ya. Setiap produk dilengkapi dengan sertifikat keaslian." },
-    { question: "Apakah Logam Mulia Raja Emas Indonesia bisa dicustom?", answer: "Ya. PT Emas Murni Asli melayani pembuatan Logam Mulia Custom untuk kebutuhan perusahaan, instansi, komunitas, maupun personal." },
-    { question: "Apakah customer bisa memilih desain dan ukuran Logam Mulia Custom?", answer: "Ya. Customer dapat menentukan desain, bentuk, ukuran, gramasi, serta spesifikasi produk sesuai kebutuhan." },
-    { question: "Apakah proses custom dapat mengurangi gramasi emas?", answer: "Tidak. Gramasi emas akan tetap mengikuti spesifikasi yang telah disepakati pada saat pemesanan." },
-    { question: "Apakah bisa custom gramasi selain yang tersedia?", answer: "Ya. Untuk kebutuhan tertentu, customer dapat berkonsultasi dengan tim kami terkait gramasi yang diinginkan." },
-    { question: "Apakah bisa custom bentuk logam mulia selain yang tersedia?", answer: "Ya. Kami dapat membantu memproduksi berbagai bentuk dan desain custom sesuai kebutuhan dan identitas customer." },
-    { question: "Apakah bisa custom produk dengan kadar emas selain 24 Karat (99,9%)?", answer: "Untuk informasi terkait ketersediaan kadar emas selain 24 Karat, silahkan konsultasikan langsung dengan tim kami." },
-    { question: "Apakah ada tambahan biaya untuk custom desain?", answer: "Biaya akan disesuaikan dengan tingkat kompleksitas desain, gramasi, jumlah pesanan, dan spesifikasi produk yang diminta." },
-    { question: "Apakah customer bisa melihat preview desain sebelum produksi?", answer: "Ya. Tim kami akan memberikan desain atau mockup terlebih dahulu untuk mendapatkan persetujuan sebelum proses produksi dimulai." },
-    { question: "Apakah bisa custom warna pada produk?", answer: "Warna produk mengikuti karakteristik logam mulia yang digunakan. Untuk kebutuhan khusus, silahkan konsultasikan dengan tim kami." },
-    { question: "Apakah PT Emas Murni Asli menyediakan katalog desain jika customer belum memiliki desain sendiri?", answer: "Ya. Kami memiliki berbagai referensi desain yang dapat dijadikan inspirasi atau disesuaikan dengan kebutuhan customer." },
-    { question: "Apakah ada contoh foto produk dan hasil jadi untuk berbagai bentuk dan gramasi?", answer: "Ya. Customer dapat melihat portofolio dan contoh hasil produksi melalui website, media sosial, atau langsung berkonsultasi dengan tim kami." },
-    { question: "Berapa ukuran standar setiap bentuk dan gramasi Logam Mulia Raja Emas Indonesia?", answer: "Ukuran produk akan menyesuaikan dengan gramasi dan desain yang dipilih. Informasi detail dapat diperoleh melalui tim customer service kami." },
-    { question: "Packaging apa yang akan didapat pada setiap pembelian?", answer: "Setiap pembelian Logam Mulia Raja Emas Indonesia dilengkapi dengan packaging premium berbahan akrilik, invoice pembelian, thank you card." },
-    { question: "Apakah tersedia pilihan packaging selain packaging standar?", answer: "Untuk kebutuhan khusus atau pesanan custom, customer dapat berkonsultasi dengan tim kami terkait pilihan packaging yang tersedia." },
-    { question: "Apakah produk Logam Mulia Raja Emas Indonesia dapat dijual kembali di masa depan?", answer: "Ya. Sebagai produk logam mulia, emas memiliki nilai yang dapat diperjualbelikan kembali sesuai ketentuan dan harga pasar yang berlaku." },
-    { question: "Bagaimana dengan harga buyback?", answer: "Harga buyback mengikuti harga buyback nasional serta menyesuaikan kebijakan perusahaan." },
-    { question: "Bagaimana cara melakukan buyback Logam Mulia Raja Emas Indonesia?", answer: "Customer dapat mengunjungi cabang Raja Emas Indonesia terdekat untuk mendapatkan informasi dan prosedur buyback yang berlaku." }
-  ],
-  "Order": [
-    { question: "Bagaimana cara melakukan pemesanan produk Logam Mulia Raja Emas Indonesia?", answer: "Pemesanan dapat dilakukan melalui WhatsApp yang tertera." },
-    { question: "Berapa lama waktu pengerjaan produk custom?", answer: "Waktu pengerjaan produk custom 14 hari - 1 bulan tidak termasuk sabtu, minggu, dan hari libur nasional serta disesuaikan juga dengan bentuk dan jumlah pesanan." },
-    { question: "Apakah ada jumlah minimum pemesanan untuk produk custom?", answer: "Tidak ada minimal order." }
-  ],
-  "Price & Payment": [
-    { question: "Bagaimana cara pembayaran pemesanan?", answer: "Kami menerima berbagai metode pembayaran, termasuk transfer bank, kartu debit/kredit, dan metode pembayaran lainnya yang tersedia sesuai ketentuan perusahaan." },
-    { question: "Apakah bisa pembayaran secara tempo?", answer: "Untuk informasi mengenai pembayaran tempo atau termin pembayaran, silahkan menghubungi tim kami. Ketentuan pembayaran akan disesuaikan dengan jenis pesanan dan kebijakan perusahaan yang berlaku." },
-    { question: "Di mana saya bisa melihat harga terbaru yang berlaku hari ini?", answer: "Untuk mendapatkan informasi harga terbaru, bisa kunjungi instagram emasmurniasli.id dan website emasmurniasli.id atau silahkan menghubungi tim kami untuk update seputar harga custom." },
-    { question: "Promo apa saja yang sedang berlaku dan bagaimana cara mendapatkannya?", answer: "Informasi seputar promo dapat diperoleh melalui WhatsApp, Marketplace Official, dan social media Emas Murni Asli." },
-    { question: "Apakah tersedia pembayaran DP untuk pesanan Logam Mulia?", answer: "Ya. Ketentuan pembayaran DP ada di 70% dan pelunasan pada saat barang diterima." }
-  ],
-  "Delivery": [
-    { question: "Apakah PT Emas Murni Asli bisa mengirim produk ke seluruh Indonesia?", answer: "Ya. PT Emas Murni Asli melayani pengiriman produk ke seluruh wilayah Indonesia melalui jasa pengiriman yang aman dan terpercaya." },
-    { question: "Untuk pengiriman, menggunakan jasa pengiriman apa saja?", answer: "Kami bekerja sama dengan beberapa jasa pengiriman terpercaya seperti JNE serta memiliki kurir internal." },
-    { question: "Apakah pengiriman produk logam mulia aman?", answer: "Ya. Setiap produk akan dikemas dengan aman menggunakan packaging premium dan melalui proses pengecekan sebelum dikirim. Kami juga bekerja sama dengan jasa pengiriman terpercaya untuk menjaga keamanan produk selama proses pengiriman." },
-    { question: "Bagaimana cara melacak pesanan?", answer: "Setelah pesanan dikirim, customer akan mendapatkan nomor resi yang dapat digunakan untuk memantau status pengiriman melalui layanan kurir." },
-    { question: "Apakah PT Emas Murni Asli memiliki toko atau offline store?", answer: "Ya. PT Emas Murni Asli memiliki offline store bernama Raja Emas Indonesia dan dapat dikunjungi langsung oleh pelanggan untuk melihat produk, berkonsultasi, maupun melakukan transaksi secara langsung." }
-  ]
 }
 
 const scrollTesti = (direction) => {

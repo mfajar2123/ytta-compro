@@ -9,7 +9,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" />
+            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" />
             <span class="font-semibold text-xl tracking-tight text-white font-heading">
               Raja Emas Indonesia
             </span>
@@ -30,11 +30,17 @@
             </button>
             <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-blackobsidian ring-1 ring-goldensand/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100 border border-darkamethyst z-50">
               <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <NuxtLink to="/products/custom-gold" class="block px-4 py-3 text-sm text-gray-300 hover:bg-darkamethyst hover:text-goldensand" role="menuitem">
+                  Custom Gold
+                </NuxtLink>
                 <NuxtLink to="/products/logam-series" class="block px-4 py-3 text-sm text-gray-300 hover:bg-darkamethyst hover:text-goldensand" role="menuitem">
                   Logam Series
                 </NuxtLink>
                 <NuxtLink to="/products/logam-custom" class="block px-4 py-3 text-sm text-gray-300 hover:bg-darkamethyst hover:text-goldensand" role="menuitem">
                   Logam Custom
+                </NuxtLink>             
+                <NuxtLink to="/products/portofolio" class="block px-4 py-3 text-sm text-gray-300 hover:bg-darkamethyst hover:text-goldensand" role="menuitem">
+                  Portfolio
                 </NuxtLink>
               </div>
             </div>
@@ -66,6 +72,8 @@
         <div class="px-3 py-2 text-base font-medium text-gray-400">Product</div>
         <NuxtLink to="/products/logam-series" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">- Logam Series</NuxtLink>
         <NuxtLink to="/products/logam-custom" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">- Logam Custom</NuxtLink>
+        <NuxtLink to="/products/custom-gold" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">- Custom Gold</NuxtLink>
+        <NuxtLink to="/products/portofolio" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">- Portofolio</NuxtLink>
 
         
         <NuxtLink to="/offline-store" class="block px-3 py-2 rounded-md text-base font-medium hover:text-goldensand hover:bg-darkamethyst" @click="isMobileMenuOpen = false">Offline Store</NuxtLink>

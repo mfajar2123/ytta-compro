@@ -8,38 +8,52 @@
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="max-w-4xl mx-auto">
           <h1 class="hero-title text-5xl md:text-7xl font-semibold mb-6 text-goldensand tracking-tight">{{ categoryTitle }}</h1>
-          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">Temukan koleksi eksklusif {{ categoryTitle }} dari Raja Emas Indonesia.</p>
+          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">{{ categorySubtitle }}</p>
         </div>
       </div>
     </section>
 
     <!-- Products Grid -->
-    <section class="py-20 md:py-32 relative z-20 -mt-10">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+    <section class="py-20 md:py-32 relative z-20 -mt-10 group">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <!-- Navigation Buttons for Slider -->
+        <button 
+          aria-label="Previous Products"
+          @click="scrollSlider('left')"
+          class="absolute left-2 md:-left-6 lg:-left-12 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/90 backdrop-blur-md border-2 border-goldensand/30 text-goldensand flex items-center justify-center hover:bg-goldensand hover:border-goldensand hover:text-white hover:scale-110 transition-all duration-300 z-30 opacity-0 group-hover:opacity-100 shadow-xl focus:outline-none hidden md:flex"
+        >
+          <Icon name="mdi:chevron-left" class="text-4xl md:text-5xl" />
+        </button>
+        <button 
+          aria-label="Next Products"
+          @click="scrollSlider('right')"
+          class="absolute right-2 md:-right-6 lg:-right-12 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/90 backdrop-blur-md border-2 border-goldensand/30 text-goldensand flex items-center justify-center hover:bg-goldensand hover:border-goldensand hover:text-white hover:scale-110 transition-all duration-300 z-30 opacity-0 group-hover:opacity-100 shadow-xl focus:outline-none hidden md:flex"
+        >
+          <Icon name="mdi:chevron-right" class="text-4xl md:text-5xl" />
+        </button>
+
+        <div 
+          ref="sliderContainer"
+          class="product-slider hide-scrollbar snap-x snap-mandatory"
+        >
           <div 
             v-for="product in categoryProducts" 
             :key="product.id"
-            class="product-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group flex flex-col h-full transform"
+            class="product-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform snap-start"
           >
-            <div class="relative h-80 flex-shrink-0 overflow-hidden bg-lightamethyst flex items-center justify-center p-8">
-              <img :src="product.image" :alt="product.name" class="product-image h-full w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-700 ease-out" loading="lazy" width="600" height="600" />
-              <div class="absolute top-6 right-6 bg-goldensand/90 backdrop-blur-sm text-blackobsidian text-sm font-bold px-4 py-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+            <div class="relative h-56 md:h-64 flex-shrink-0 overflow-hidden bg-lightamethyst flex items-center justify-center p-6 group/img">
+              <img :src="product.image" :alt="product.name" class="product-image h-full w-full object-contain rounded-2xl group-hover/img:scale-110 transition-transform duration-700 ease-out" loading="lazy" width="600" height="600" />
+              <div class="absolute top-6 right-6 bg-goldensand/90 backdrop-blur-sm text-blackobsidian text-sm font-bold px-4 py-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover/img:translate-y-0 group-hover/img:opacity-100 transition-all duration-300">
                 {{ product.weight }}
               </div>
             </div>
-            <div class="p-8 flex flex-col flex-grow bg-gradient-to-b from-white to-whitedust/50">
-              <h3 class="text-2xl font-semibold text-blackobsidian mb-4 h-16 line-clamp-2 leading-tight">
+            <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-whitedust/50">
+              <h3 class="text-xl font-semibold text-blackobsidian mb-2 line-clamp-2 leading-tight">
                 {{ product.name }}
               </h3>
-              <p class="text-gray-600 text-base mb-8 flex-grow h-12 line-clamp-2 leading-relaxed">
+              <p class="text-gray-500 text-sm flex-grow line-clamp-3 leading-relaxed">
                 {{ product.description }}
               </p>
-              
-              <button class="w-full py-4 mt-auto bg-blackobsidian text-white rounded-2xl font-bold hover:bg-goldensand hover:text-blackobsidian transition-all duration-300 flex items-center justify-center gap-3 group-hover:-translate-y-1 shadow-md hover:shadow-xl">
-                <Icon name="mdi:whatsapp" class="text-2xl" />
-                Pesan Sekarang
-              </button>
             </div>
           </div>
         </div>
@@ -54,7 +68,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -68,7 +82,21 @@ const category = route.params.category
 const categoryTitle = computed(() => {
   if (category === 'logam-series') return 'Logam Series'
   if (category === 'logam-custom') return 'Logam Custom'
+  if (category === 'portofolio') return 'Portfolio'
   return 'Produk'
+})
+
+const categorySubtitle = computed(() => {
+  if (category === 'logam-series') {
+    return 'Hadir dengan kemasan eksklusif yang dapat dikustomisasi sesuai kebutuhan personal, perusahaan, maupun acara spesial Anda.'
+  }
+  if (category === 'logam-custom') {
+    return 'Layanan pembuatan logam mulia dengan desain dan bentuk yang sepenuhnya disesuaikan dengan permintaan client baik untuk corporate gift, penghargaan, souvenir premium, dan kebutuhan branding eksklusif.'
+  }
+  if (category === 'portofolio') {
+    return 'Eksplorasi berbagai karya dan mahakarya desain logam mulia yang telah kami ciptakan untuk klien-klien terbaik Raja Emas Indonesia.'
+  }
+  return `Temukan koleksi eksklusif ${categoryTitle.value} dari Raja Emas Indonesia.`
 })
 
 useSeoMeta({
@@ -80,6 +108,20 @@ useSeoMeta({
 const categoryProducts = computed(() => {
   return siteData.products[category] || []
 })
+
+const sliderContainer = ref(null)
+
+const scrollSlider = (direction) => {
+  if (sliderContainer.value) {
+    const scrollAmount = window.innerWidth > 1024 ? sliderContainer.value.clientWidth / 3 : 
+                         window.innerWidth > 640 ? sliderContainer.value.clientWidth / 2 : 
+                         sliderContainer.value.clientWidth * 0.85;
+    sliderContainer.value.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    })
+  }
+}
 
 onMounted(() => {
   // Hero Animation
@@ -129,3 +171,43 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+.product-slider {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+.product-slider > * {
+  width: 100%;
+}
+
+@media (max-width: 639px) {
+  .product-slider {
+    grid-auto-columns: 85%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .product-slider {
+    grid-auto-columns: calc(50% - 0.75rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-slider {
+    grid-auto-columns: calc(33.333333% - 1rem);
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+</style>

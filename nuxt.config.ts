@@ -12,6 +12,13 @@ export default defineNuxtConfig({
       meta: [
         { name: 'author', content: 'Raja Emas Indonesia' },
         { name: 'theme-color', content: '#111111' },
+      ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
+        { rel: 'icon', type: 'image/png', href: '/img/home/logo.png' },
+        { rel: 'apple-touch-icon', href: '/img/home/logo.png' }
       ]
     }
   },

@@ -1,0 +1,98 @@
+<template>
+  <div id="custom-gold-page">
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-screen pt-24 pb-16 flex items-center justify-center bg-whitedust text-blackobsidian overflow-hidden">
+      <!-- Background elements replaced with solid non-gradient subtle decorations -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-10 left-10 w-32 h-32 bg-goldensand/10 rounded-full"></div>
+        <div class="absolute bottom-10 right-20 w-48 h-48 bg-lightamethyst rounded-full"></div>
+        <div class="absolute top-1/2 right-1/4 w-24 h-24 bg-goldensand/10 rounded-full"></div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <div class="max-w-2xl text-center lg:text-left order-2 lg:order-1 mx-auto lg:mx-0">
+            <div class="hero-title">
+              <span class="inline-block py-1.5 px-4 rounded-full bg-goldensand/10 border border-goldensand/30 text-goldensand text-sm font-semibold tracking-widest uppercase mb-4">
+                Mengapa Memilih Kami?
+              </span>
+              <h1 class="block text-4xl sm:text-5xl lg:text-6xl font-semibold text-blackobsidian mb-6 tracking-tight leading-tight">
+                <span class="text-goldensand">Custom Gold</span> Design
+              </h1>
+            </div>
+            
+            <div class="hero-subtitle space-y-4 text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+              <p>
+                Di <strong class="text-blackobsidian font-semibold">Raja Emas Indonesia</strong>, kami menghadirkan layanan <strong class="text-blackobsidian font-semibold">Custom Gold Design</strong> yang memungkinkan setiap logo, simbol, karakter, maupun desain khusus diwujudkan pada emas murni 24 Karat (99,9%) dan request karat lainnya. Dengan teknologi produksi presisi dan pengerjaan yang detail, setiap desain tampil lebih eksklusif, berkarakter, dan memiliki nilai yang lebih dari sekadar logam mulia.
+              </p>
+              <p>
+                Emas custom bukan hanya sebuah produk hadiah atau souvenir. Ia menjadi representasi identitas, apresiasi, dan citra yang ingin ditampilkan oleh individu, komunitas, perusahaan, maupun instansi.
+              </p>
+            </div>
+          </div>
+
+          <div class="hero-video order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
+            <div class="relative rounded-3xl overflow-hidden border-8 border-white bg-white shadow-xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
+              <video 
+                src="/vid/LM_REI.mp4" 
+                class="w-full h-auto max-h-[60vh] object-contain rounded-2xl"
+                autoplay 
+                loop 
+                muted 
+                playsinline
+              ></video>
+              <div class="absolute inset-0 border border-gray-100 rounded-2xl pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</template>
+
+<script setup>
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+useSeoMeta({
+  title: 'Custom Gold',
+  titleTemplate: '%s - Raja Emas Indonesia',
+  description: 'Layanan Custom Gold Design yang memungkinkan setiap logo, simbol, karakter, maupun desain khusus diwujudkan pada emas murni 24 Karat.',
+})
+
+onMounted(() => {
+  // Hero Animation
+  const tl = gsap.timeline()
+  
+  tl.fromTo('.hero-video',
+    { x: 50, opacity: 0, scale: 0.95 },
+    { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
+  )
+  .fromTo('.hero-title',
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
+    "-=0.8"
+  )
+  .fromTo('.hero-subtitle p',
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
+    "-=0.6"
+  )
+
+  // Parallax effect on scroll
+  gsap.to('.hero-section', {
+    yPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#custom-gold-page",
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  })
+})
+</script>

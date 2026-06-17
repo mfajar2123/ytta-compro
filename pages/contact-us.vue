@@ -26,13 +26,13 @@
 
           <div class="hero-cta flex flex-col sm:flex-row justify-center items-center gap-6">
             <!-- WhatsApp Button -->
-            <a href="https://wa.me/6281212129533" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-5 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-600 transition-colors duration-300 flex items-center justify-center group font-sans">
+            <a :href="siteData.company.contact.marketing[0].whatsapp" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-5 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-600 transition-colors duration-300 flex items-center justify-center group font-sans">
               <Icon name="mdi:whatsapp" class="text-2xl mr-3 group-hover:scale-110 transition-transform" />
               <span>WhatsApp Kami</span>
             </a>
 
             <!-- Linktree Button -->
-            <a href="https://linktr.ee/emas_murni_asli" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-5 bg-white text-blackobsidian font-bold rounded-full hover:bg-gray-200 transition-colors duration-300 flex items-center justify-center group font-sans">
+            <a :href="siteData.company.contact.linktree" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-5 bg-white text-blackobsidian font-bold rounded-full hover:bg-gray-200 transition-colors duration-300 flex items-center justify-center group font-sans">
               <Icon name="simple-icons:linktree" class="text-xl mr-3 text-goldensand group-hover:scale-110 transition-transform" />
               <span>Kunjungi Linktree</span>
             </a>
@@ -58,23 +58,18 @@
             <p class="text-xs text-gray-400 mt-1">Pilih admin yang tersedia</p>
           </div>
           <div class="p-2 space-y-1">
-            <a href="https://wa.me/6281212129533" target="_blank" rel="noopener noreferrer" class="flex items-center p-3 hover:bg-whitedust rounded-xl transition-colors group">
+            <a 
+              v-for="(admin, index) in siteData.company.contact.marketing" 
+              :key="index"
+              :href="admin.whatsapp" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex items-center p-3 hover:bg-whitedust rounded-xl transition-colors group"
+            >
               <div class="w-10 h-10 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mr-3 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                 <Icon name="mdi:whatsapp" class="text-xl" />
               </div>
-              <span class="font-medium text-blackobsidian text-sm">Marketing 1</span>
-            </a>
-            <a href="https://wa.me/6281288996077" target="_blank" rel="noopener noreferrer" class="flex items-center p-3 hover:bg-whitedust rounded-xl transition-colors group">
-              <div class="w-10 h-10 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mr-3 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
-                <Icon name="mdi:whatsapp" class="text-xl" />
-              </div>
-              <span class="font-medium text-blackobsidian text-sm">Marketing 2</span>
-            </a>
-            <a href="https://wa.me/6282121213396" target="_blank" rel="noopener noreferrer" class="flex items-center p-3 hover:bg-whitedust rounded-xl transition-colors group">
-              <div class="w-10 h-10 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mr-3 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
-                <Icon name="mdi:whatsapp" class="text-xl" />
-              </div>
-              <span class="font-medium text-blackobsidian text-sm">Marketing 3</span>
+              <span class="font-medium text-blackobsidian text-sm">{{ admin.name }}</span>
             </a>
           </div>
         </div>
@@ -95,6 +90,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
+import siteData from '~/data/siteData.json'
 
 const isWaMenuOpen = ref(false)
 

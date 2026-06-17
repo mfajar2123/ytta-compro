@@ -1,35 +1,150 @@
 {
   "company": {
     "name": "Raja Emas Indonesia",
-    "tagline": "Investasi Emas Murni. Jaminan Keamanan & Likuiditas Tinggi.",
+    "tagline": "Raja Emas Indonesia Tidak Menerima / Membeli Emas Hasil Pencurian atau Tindak Pidana Lainya.",
     "about": "Raja Emas Indonesia merupakan institusi penyedia emas murni bersertifikat terdepan, didedikasikan untuk melindungi dan mengembangkan nilai aset Anda melalui standar kemurnian tertinggi, transparansi harga global, dan layanan paripurna.",
     "contact": {
       "phone": "0811-1971-9990",
       "address": "Jl. MH Thamrin No.1, Jakarta Pusat, DKI Jakarta",
       "mapCoordinates": "https://maps.google.com/maps?q=-6.1945,106.8229&hl=es;z=14&output=embed",
-      "linktree": "https://linktr.ee/rajaemasindonesia"
+      "linktree": "https://linktr.ee/emasmurniasliofc",
+      "marketing": [
+        {
+          "name": "Marketing 1",
+          "whatsapp": "https://wa.me/6281212129533"
+        },
+        {
+          "name": "Marketing 2",
+          "whatsapp": "https://wa.me/6281288996077"
+        },
+        {
+          "name": "Marketing 3",
+          "whatsapp": "https://wa.me/6282121213396"
+        }
+      ]
     }
+  },
+  "heroSlider": [
+    "Page1.png",
+    "page2.png",
+    "page3.png",
+    "page4.png",
+    "page5.png"
+  ],
+  "faqs": {
+    "General": [
+      {
+        "question": "Apakah bisa custom warna pada produk?",
+        "answer": "Warna produk mengikuti karakteristik logam mulia yang digunakan. Untuk kebutuhan khusus, silahkan konsultasikan dengan tim kami."
+      },
+      {
+        "question": "Apakah PT Emas Murni Asli menyediakan katalog desain jika customer belum memiliki desain sendiri?",
+        "answer": "Ya. Kami memiliki berbagai referensi desain yang dapat dijadikan inspirasi atau disesuaikan dengan kebutuhan customer."
+      },
+      {
+        "question": "Apakah ada contoh foto produk dan hasil jadi untuk berbagai bentuk dan gramasi?",
+        "answer": "Ya. Customer dapat melihat portofolio dan contoh hasil produksi melalui website, media sosial, atau langsung berkonsultasi dengan tim kami."
+      },
+      {
+        "question": "Berapa ukuran standar setiap bentuk dan gramasi Logam Mulia Raja Emas Indonesia?",
+        "answer": "Ukuran produk akan menyesuaikan dengan gramasi dan desain yang dipilih. Informasi detail dapat diperoleh melalui tim customer service kami."
+      },
+      {
+        "question": "Packaging apa yang akan didapat pada setiap pembelian?",
+        "answer": "Setiap pembelian Logam Mulia Raja Emas Indonesia dilengkapi dengan packaging premium berbahan akrilik, invoice pembelian, thank you card."
+      },
+      {
+        "question": "Apakah tersedia pilihan packaging selain packaging standar?",
+        "answer": "Untuk kebutuhan khusus atau pesanan custom, customer dapat berkonsultasi dengan tim kami terkait pilihan packaging yang tersedia."
+      },
+      {
+        "question": "Apakah produk Logam Mulia Raja Emas Indonesia dapat dijual kembali di masa depan?",
+        "answer": "Ya. Sebagai produk logam mulia, emas memiliki nilai yang dapat diperjualbelikan kembali sesuai ketentuan dan harga pasar yang berlaku."
+      },
+      {
+        "question": "Bagaimana dengan harga buyback?",
+        "answer": "Harga buyback mengikuti harga buyback nasional serta menyesuaikan kebijakan perusahaan."
+      },
+      {
+        "question": "Bagaimana cara melakukan buyback Logam Mulia Raja Emas Indonesia?",
+        "answer": "Customer dapat mengunjungi cabang Raja Emas Indonesia terdekat untuk mendapatkan informasi dan prosedur buyback yang berlaku."
+      }
+    ],
+    "Order": [
+      {
+        "question": "Bagaimana cara melakukan pemesanan produk Logam Mulia Raja Emas Indonesia?",
+        "answer": "Pemesanan dapat dilakukan melalui WhatsApp yang tertera."
+      },
+      {
+        "question": "Berapa lama waktu pengerjaan produk custom?",
+        "answer": "Waktu pengerjaan produk custom 14 hari - 1 bulan tidak termasuk sabtu, minggu, dan hari libur nasional serta disesuaikan juga dengan bentuk dan jumlah pesanan."
+      },
+      {
+        "question": "Apakah ada jumlah minimum pemesanan untuk produk custom?",
+        "answer": "Tidak ada minimal order."
+      }
+    ],
+    "Price & Payment": [
+      {
+        "question": "Bagaimana cara pembayaran pemesanan?",
+        "answer": "Kami menerima berbagai metode pembayaran, termasuk transfer bank, kartu debit/kredit, dan metode pembayaran lainnya yang tersedia sesuai ketentuan perusahaan."
+      },
+      {
+        "question": "Apakah bisa pembayaran secara tempo?",
+        "answer": "Untuk informasi mengenai pembayaran tempo atau termin pembayaran, silahkan menghubungi tim kami. Ketentuan pembayaran akan disesuaikan dengan jenis pesanan dan kebijakan perusahaan yang berlaku."
+      },
+      {
+        "question": "Di mana saya bisa melihat harga terbaru yang berlaku hari ini?",
+        "answer": "Untuk mendapatkan informasi harga terbaru, bisa kunjungi instagram emasmurniasli.id dan website emasmurniasli.id atau silahkan menghubungi tim kami untuk update seputar harga custom."
+      },
+      {
+        "question": "Promo apa saja yang sedang berlaku dan bagaimana cara mendapatkannya?",
+        "answer": "Informasi seputar promo dapat diperoleh melalui WhatsApp, Marketplace Official, dan social media Emas Murni Asli."
+      },
+      {
+        "question": "Apakah tersedia pembayaran DP untuk pesanan Logam Mulia?",
+        "answer": "Ya. Ketentuan pembayaran DP ada di 70% dan pelunasan pada saat barang diterima."
+      }
+    ],
+    "Delivery": [
+      {
+        "question": "Apakah PT Emas Murni Asli bisa mengirim produk ke seluruh Indonesia?",
+        "answer": "Ya. PT Emas Murni Asli melayani pengiriman produk ke seluruh wilayah Indonesia melalui jasa pengiriman yang aman dan terpercaya."
+      },
+      {
+        "question": "Untuk pengiriman, menggunakan jasa pengiriman apa saja?",
+        "answer": "Kami bekerja sama dengan beberapa jasa pengiriman terpercaya seperti JNE serta memiliki kurir internal."
+      },
+      {
+        "question": "Apakah pengiriman produk logam mulia aman?",
+        "answer": "Ya. Setiap produk akan dikemas dengan aman menggunakan packaging premium dan melalui proses pengecekan sebelum dikirim. Kami juga bekerja sama dengan jasa pengiriman terpercaya untuk menjaga keamanan produk selama proses pengiriman."
+      },
+      {
+        "question": "Bagaimana cara melacak pesanan?",
+        "answer": "Setelah pesanan dikirim, customer akan mendapatkan nomor resi yang dapat digunakan untuk memantau status pengiriman melalui layanan kurir."
+      },
+      {
+        "question": "Apakah PT Emas Murni Asli memiliki toko atau offline store?",
+        "answer": "Ya. PT Emas Murni Asli memiliki offline store bernama Raja Emas Indonesia dan dapat dikunjungi langsung oleh pelanggan untuk melihat produk, berkonsultasi, maupun melakukan transaksi secara langsung."
+      }
+    ]
   },
   "partners": [
     {
       "name": "BPJS Ketenagakerjaan",
-      "logo": "https://placehold.co/150x80/111111/D3A85F?text=BPJS"
-    },
-    {
-      "name": "L'Oréal",
-      "logo": "https://placehold.co/150x80/111111/D3A85F?text=Loreal"
+      "logo": "/img/home/partner/2.png"
     },
     {
       "name": "Korpri",
-      "logo": "https://placehold.co/150x80/111111/D3A85F?text=Korpri"
+      "logo": "/img/home/partner/1.png"
     },
     {
-      "name": "BCA",
-      "logo": "https://placehold.co/150x80/111111/D3A85F?text=BCA"
+      "name": "DPRD",
+      "logo": "/img/home/partner/3.png"
     },
     {
-      "name": "Mandiri",
-      "logo": "https://placehold.co/150x80/111111/D3A85F?text=Mandiri"
+      "name": "Pak Gembus",
+      "logo": "/img/home/partner/4.png"
     }
   ],
   "features": [
@@ -233,40 +348,224 @@
     "logam-series": [
       {
         "id": "ls-1",
-        "name": "Logam Mulia 0.1g - Edisi Idul Adha",
-        "weight": "0.1g",
-        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Emas murni 24 karat edisi spesial Idul Adha dengan desain eksklusif."
+        "name": "IDUL FITRI SERIES",
+        "weight": "0.5g",
+        "image": "/img/product/lm-series/untitled.334.png",
+        "description": "Koleksi logam mulia eksklusif sebagai simbol silaturahmi, rasa syukur, dan kebahagiaan di Hari Raya Idul Fitri."
       },
       {
         "id": "ls-2",
-        "name": "Logam Mulia 0.5g - Edisi Imlek",
-        "weight": "0.5g",
-        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Desain shio tahun ini, cocok untuk hadiah Imlek atau koleksi pribadi."
+        "name": "IDUL FITRI SERIES",
+        "weight": "0.1g",
+        "image": "/img/product/lm-series/untitled.335.png",
+        "description": "Koleksi logam mulia eksklusif sebagai simbol silaturahmi, rasa syukur, dan kebahagiaan di Hari Raya Idul Fitri."
       },
       {
         "id": "ls-3",
-        "name": "Logam Mulia 1g - Edisi Wedding",
+        "name": "IMLEK SERIES",
+        "weight": "0.1g",
+        "image": "/img/product/lm-series/untitled.344.png",
+        "description": "Koleksi logam mulia bernuansa Imlek sebagai simbol keberuntungan, kemakmuran, dan harapan baik di tahun yang baru."
+      },
+      {
+        "id": "ls-4",
+        "name": "IMLEK SERIES",
+        "weight": "0.5g",
+        "image": "/img/product/lm-series/untitled.346.png",
+        "description": "Koleksi logam mulia bernuansa Imlek sebagai simbol keberuntungan, kemakmuran, dan harapan baik di tahun yang baru."
+      },
+      {
+        "id": "ls-5",
+        "name": "IDUL ADHA SERIES",
+        "weight": "0.5g",
+        "image": "/img/product/lm-series/untitled.388.png",
+        "description": "Hadiah emas spesial untuk memperingati momen kurban dan berbagi keberkahan di Hari Raya Idul Adha."
+      },
+      {
+        "id": "ls-6",
+        "name": "IDUL ADHA SERIES",
+        "weight": "0.1g",
+        "image": "/img/product/lm-series/untitled.391.png",
+        "description": "Hadiah emas spesial untuk memperingati momen kurban dan berbagi keberkahan di Hari Raya Idul Adha."
+      },
+      {
+        "id": "ls-7",
+        "name": "ANABUL SERIES",
         "weight": "1g",
-        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Hadiah pernikahan istimewa, investasi yang berharga untuk masa depan pasangan."
+        "image": "/img/product/lm-series/untitled.441.png",
+        "description": "Emas edisi khusus untuk mengabadikan kasih sayang dan momen berharga bersama hewan kesayangan tercinta."
+      },
+      {
+        "id": "ls-8",
+        "name": "WEDDING SERIES",
+        "weight": "1g",
+        "image": "/img/product/lm-series/untitled.442.png",
+        "description": "Hadiah emas elegan yang menjadi simbol cinta, komitmen, dan kenangan abadi di hari pernikahan."
+      },
+      {
+        "id": "ls-9",
+        "name": "BIRTHDAY SERIES",
+        "weight": "0.5g",
+        "image": "/img/product/lm-series/untitled.443.png",
+        "description": "Hadiah emas istimewa untuk merayakan ulang tahun dengan kesan yang lebih berharga dan tak terlupakan."
+      },
+      {
+        "id": "ls-10",
+        "name": "BIRTHDAY SERIES",
+        "weight": "0.1g",
+        "image": "/img/product/lm-series/untitled.444.png",
+        "description": "Hadiah emas istimewa untuk merayakan ulang tahun dengan kesan yang lebih berharga dan tak terlupakan."
+      },
+      {
+        "id": "ls-11",
+        "name": "ANABUL SERIES",
+        "weight": "1g",
+        "image": "/img/product/lm-series/untitled.450.png",
+        "description": "Emas edisi khusus untuk mengabadikan kasih sayang dan momen berharga bersama hewan kesayangan tercinta."
       }
     ],
     "logam-custom": [
       {
         "id": "lc-1",
-        "name": "Pin Emas Ayam Pak Gembus",
-        "weight": "Custom",
-        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Pin penghargaan karyawan yang terbuat dari emas murni, desain sesuai logo perusahaan."
+        "name": "Corp Incentive C",
+        "weight": "",
+        "image": "/img/product/lm-custom/1. Corp Incentive C.jpeg",
+        "description": "Logam mulia custom desain Corp Incentive C."
       },
       {
         "id": "lc-2",
-        "name": "Medali Custom L'Oréal",
-        "weight": "Custom",
+        "name": "Sales Achievement Award",
+        "weight": "",
+        "image": "/img/product/lm-custom/11. Sales Achievement Award.jpeg",
+        "description": "Logam mulia custom desain Sales Achievement Award."
+      },
+      {
+        "id": "lc-3",
+        "name": "Appreciation for Speakers",
+        "weight": "",
+        "image": "/img/product/lm-custom/15. Appreciation for Speakers.jpeg",
+        "description": "Logam mulia custom desain Appreciation for Speakers."
+      },
+      {
+        "id": "lc-4",
+        "name": "Employee Of The Month A",
+        "weight": "",
+        "image": "/img/product/lm-custom/2. Employee Of The Month A.jpeg",
+        "description": "Logam mulia custom desain Employee Of The Month A."
+      },
+      {
+        "id": "lc-5",
+        "name": "VIP Client Gift A",
+        "weight": "",
+        "image": "/img/product/lm-custom/3. VIP Client Gift A.jpeg",
+        "description": "Logam mulia custom desain VIP Client Gift A."
+      },
+      {
+        "id": "lc-6",
+        "name": "MICE Event",
+        "weight": "",
+        "image": "/img/product/lm-custom/9. MICE Event.jpeg",
+        "description": "Logam mulia custom desain MICE Event."
+      },
+      {
+        "id": "lc-7",
+        "name": "BPJS",
+        "weight": "",
+        "image": "/img/product/lm-custom/BPJS.png",
+        "description": "Logam mulia custom desain BPJS."
+      },
+      {
+        "id": "lc-8",
+        "name": "GARUDA3",
+        "weight": "",
+        "image": "/img/product/lm-custom/GARUDA3.png",
+        "description": "Logam mulia custom desain GARUDA3."
+      },
+      {
+        "id": "lc-9",
+        "name": "GEMBUS3",
+        "weight": "",
+        "image": "/img/product/lm-custom/GEMBUS3.png",
+        "description": "Logam mulia custom desain GEMBUS3."
+      },
+      {
+        "id": "lc-10",
+        "name": "KORPRI3",
+        "weight": "",
+        "image": "/img/product/lm-custom/KORPRI3.png",
+        "description": "Logam mulia custom desain KORPRI3."
+      },
+      {
+        "id": "lc-11",
+        "name": "Pin Shio",
+        "weight": "",
+        "image": "/img/product/lm-custom/Pin Shio.jpeg",
+        "description": "Logam mulia custom desain Pin Shio."
+      },
+      {
+        "id": "lc-12",
+        "name": "Pin Zodiak",
+        "weight": "",
+        "image": "/img/product/lm-custom/Pin Zodiak.jpeg",
+        "description": "Logam mulia custom desain Pin Zodiak."
+      },
+      {
+        "id": "lc-13",
+        "name": "RADJA COMPANY - HARIMAU",
+        "weight": "",
+        "image": "/img/product/lm-custom/RADJA COMPANY - HARIMAU.png",
+        "description": "Logam mulia custom desain RADJA COMPANY - HARIMAU."
+      },
+      {
+        "id": "lc-14",
+        "name": "RADJA COMPANY - NAGA",
+        "weight": "",
+        "image": "/img/product/lm-custom/RADJA COMPANY - NAGA.png",
+        "description": "Logam mulia custom desain RADJA COMPANY - NAGA."
+      }
+    ],
+    "portofolio": [
+      {
+        "id": "pf-1",
+        "name": "Karya Custom 1",
+        "weight": "Portfolio",
         "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Medali penghargaan eksklusif untuk acara korporat."
+        "description": "Contoh desain karya logam mulia eksklusif untuk perayaan ulang tahun perusahaan."
+      },
+      {
+        "id": "pf-2",
+        "name": "Karya Custom 2",
+        "weight": "Portfolio",
+        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
+        "description": "Contoh desain pin emas penghargaan dengan detail presisi tinggi."
+      },
+      {
+        "id": "pf-3",
+        "name": "Karya Custom 3",
+        "weight": "Portfolio",
+        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
+        "description": "Desain custom plakat emas murni untuk instansi."
+      },
+      {
+        "id": "pf-4",
+        "name": "Karya Custom 4",
+        "weight": "Portfolio",
+        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
+        "description": "Medali emas murni untuk kompetisi tingkat nasional."
+      },
+      {
+        "id": "pf-5",
+        "name": "Karya Custom 5",
+        "weight": "Portfolio",
+        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
+        "description": "Koin emas souvenir dengan ukiran logo khusus."
+      },
+      {
+        "id": "pf-6",
+        "name": "Karya Custom 6",
+        "weight": "Portfolio",
+        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
+        "description": "Karya desain logam mulia eksklusif edisi terbatas."
       }
     ]
   },

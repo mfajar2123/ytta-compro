@@ -1,12 +1,12 @@
 <template>
   <footer class="bg-blackobsidian text-white pt-16 pb-8 border-t border-darkamethyst">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
         
         <!-- Brand -->
         <div class="space-y-4">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" />
+            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" loading="lazy" />
             <span class="font-semibold text-2xl tracking-tight text-white font-heading">Raja Emas Indonesia</span>
           </NuxtLink>
           <p class="text-gray-400 max-w-sm">
@@ -28,36 +28,16 @@
           </div>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-goldensand font-semibold text-lg mb-4">Navigasi</h3>
-          <ul class="space-y-2">
-            <li><NuxtLink to="/" class="text-gray-400 hover:text-white transition-colors">Home</NuxtLink></li>
-            <li><NuxtLink to="/products/logam-series" class="text-gray-400 hover:text-white transition-colors">Logam Series</NuxtLink></li>
-            <li><NuxtLink to="/products/logam-custom" class="text-gray-400 hover:text-white transition-colors">Logam Custom</NuxtLink></li>
-            <li><NuxtLink to="/offline-store" class="text-gray-400 hover:text-white transition-colors">Offline Store</NuxtLink></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h3 class="text-goldensand font-semibold text-lg mb-4">Hubungi Kami</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <Icon name="mdi:map-marker" class="text-xl text-goldensand mr-2 mt-1 flex-shrink-0" />
-              <span class="text-gray-400">{{ siteData.company.contact.address }}</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:phone" class="text-xl text-goldensand mr-2 flex-shrink-0" />
-              <span class="text-gray-400">{{ siteData.company.contact.phone }}</span>
-            </li>
-            <li>
-              <a :href="siteData.company.contact.linktree" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-goldensand hover:text-white transition-colors mt-2">
-                Hubungi via Linktree
-                <Icon name="mdi:arrow-right" class="ml-1" />
-              </a>
-            </li>
-          </ul>
+        <!-- Contact CTA -->
+        <div class="flex flex-col justify-center items-start md:items-end md:text-right">
+          <h3 class="text-goldensand font-semibold text-xl mb-4">Butuh Bantuan?</h3>
+          <p class="text-gray-400 mb-6 max-w-sm">
+            Tim layanan pelanggan kami siap membantu Anda untuk informasi lebih lanjut mengenai produk dan layanan Raja Emas Indonesia.
+          </p>
+          <NuxtLink to="/contact-us" class="inline-flex items-center px-6 py-3 bg-goldensand text-white font-semibold rounded-full hover:bg-white hover:text-blackobsidian transition-colors duration-300 shadow-lg">
+            Hubungi Kami
+            <Icon name="mdi:arrow-right" class="ml-2 text-xl" />
+          </NuxtLink>
         </div>
       </div>
       
