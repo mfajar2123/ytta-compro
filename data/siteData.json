@@ -132,19 +132,19 @@
   "partners": [
     {
       "name": "BPJS Ketenagakerjaan",
-      "logo": "/img/home/partner/2.png"
+      "logo": "/img/home/partner/2.webp"
     },
     {
       "name": "Korpri",
-      "logo": "/img/home/partner/1.png"
+      "logo": "/img/home/partner/1.webp"
     },
     {
       "name": "DPRD",
-      "logo": "/img/home/partner/3.png"
+      "logo": "/img/home/partner/3.webp"
     },
     {
       "name": "Pak Gembus",
-      "logo": "/img/home/partner/4.png"
+      "logo": "/img/home/partner/4.webp"
     }
   ],
   "features": [

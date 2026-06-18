@@ -6,13 +6,13 @@
     <template v-if="!isLoaded">
       <!-- Thumbnail -->
       <NuxtImg 
-        :src="`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`" 
+        :src="`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`" 
         :alt="title"
         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
         format="webp"
-        width="1280"
-        height="720"
+        width="480"
+        height="360"
       />
       <!-- Play Button Overlay -->
       <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">

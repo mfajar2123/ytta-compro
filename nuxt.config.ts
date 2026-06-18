@@ -31,8 +31,8 @@ export default defineNuxtConfig({
   modules: ["nuxt-icon", "@nuxt/image", "@nuxtjs/google-fonts"],
   googleFonts: {
     families: {
-      'El Messiri': [400, 500, 600, 700],
-      'Raleway': [400, 500, 600, 700],
+      'El Messiri': [600, 700],
+      'Raleway': [400, 500, 700],
     },
     display: 'swap',
     download: true,
