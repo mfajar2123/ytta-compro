@@ -89,8 +89,8 @@ onMounted(() => {
   setTimeout(() => {
     const heroElements = document.querySelectorAll('.hero-anim')
     heroElements.forEach(el => {
-      el.classList.remove('opacity-0', 'translate-y-12', 'scale-95')
-      el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+      el.classList.remove('opacity-0', 'translate-y-12', 'translate-x-12', 'scale-95')
+      el.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100')
     })
   }, 100)
 })
