@@ -4,16 +4,13 @@ Situs web resmi dan platform digital untuk Raja Emas Indonesia, penyedia emas mu
 
 ## Teknologi & Fitur Utama
 
-- **Framework Core**: Dibangun menggunakan **Nuxt 3** dengan arsitektur SSR (*Server-Side Rendering*) dan optimasi *Code Splitting* yang agresif menggunakan `<Lazy...>` komponen.
-- **Styling & UI**: **Tailwind CSS** dipadukan dengan palet warna khusus dan desain antar muka bergaya *glassmorphism* modern.
-- **Performa Ekstrem (Lighthouse 90+)**: 
-  - Tidak menggunakan *library* Javascript pihak ketiga yang berat (seperti GSAP atau Lenis). Seluruh animasi dibangun 100% menggunakan **Native CSS Transitions** & **Intersection Observer API** (`useFadeUp`).
-  - Terintegrasi dengan modul **Nuxt Image** (`@nuxt/image`) untuk optimasi pengiriman gambar (*WebP* otomatis, atribut `sizes` cerdas, resolusi responsif).
-  - Implementasi **YouTube Facade Pattern** untuk memangkas *blocking time* saat memuat video *embed*, menghemat *payload* ukuran halaman hingga 2MB.
-  - Optimasi **Google Fonts** (`@nuxtjs/google-fonts`) yang dirampingkan hanya memanggil bobot tulisan (*font-weight*) yang dibutuhkan saja demi memangkas *Critical Path Latency*.
-- **Cinematic Ambient Background**: Penggunaan filter CSS tingkat lanjut (`blur`, `saturate`) pada *slider desktop* untuk memunculkan pendaran efek ambient mewah tanpa memakan *bandwith* ekstra.
-- **Animasi Transisi Halaman (*Page Transitions*)**: Navigasi perpindahan rute dibekali efek transisi *fade-slide-blur* standar industri yang *smooth* dan sangat responsif.
-- **Sumber Data Dinamis**: Keseluruhan konten (produk, kontak pemasaran, cabang, dan slider) dapat dengan mudah dikendalikan melalui berkas terpusat di `data/siteData.json`.
+- **Nuxt 3 & SSR**: Dibangun dengan arsitektur modern yang mendukung rendering sisi server dan pemuatan komponen *lazy loading*.
+- **Tailwind CSS**: Desain antarmuka cepat, konsisten, dan kustom dengan gaya *glassmorphism*.
+- **Nuxt Image**: Pengolahan gambar terpusat untuk *WebP* otomatis dan format responsif cerdas.
+- **Native CSS Animations**: Menggunakan animasi bawaan CSS dipadukan dengan *Intersection Observer* tanpa *library* eksternal.
+- **Page Transitions**: Perpindahan rute antar halaman yang mulus dengan efek *fade-slide-blur*.
+- **YouTube Facade**: Sistem pemuatan modul video secara tertunda (*lazy*) untuk menghemat data halaman.
+- **Data-Driven Content**: Keseluruhan teks, produk, dan lokasi toko diatur secara terpusat melalui berkas `data/siteData.json`.
 
 ## Prasyarat
 
