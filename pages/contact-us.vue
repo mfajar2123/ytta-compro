@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blackobsidian min-h-screen flex flex-col pt-20">
+  <div class="bg-darkamethyst min-h-screen flex flex-col pt-20">
     <!-- Centered Content Section -->
     <section class="relative flex-grow flex items-center justify-center overflow-hidden py-20">
       
@@ -95,8 +95,12 @@ import siteData from '~/data/siteData.json'
 const isWaMenuOpen = ref(false)
 
 useSeoMeta({
-  title: 'Contact Us',
-  description: 'Hubungi Raja Emas Indonesia untuk konsultasi logam mulia dan custom gold.',
+  title: 'Hubungi Kami - Layanan & Konsultasi',
+  description: 'Hubungi tim marketing Raja Emas Indonesia melalui WhatsApp atau Linktree untuk konsultasi logam mulia, custom gold, souvenir perusahaan, dan pembelian emas murni.',
+  ogTitle: 'Hubungi Kami - Layanan & Konsultasi Raja Emas Indonesia',
+  ogDescription: 'Hubungi tim marketing Raja Emas Indonesia melalui WhatsApp atau Linktree untuk konsultasi logam mulia, custom gold, souvenir perusahaan, dan pembelian emas murni.',
+  twitterTitle: 'Hubungi Kami - Layanan & Konsultasi',
+  twitterDescription: 'Hubungi tim marketing Raja Emas Indonesia melalui WhatsApp untuk konsultasi logam mulia dan custom gold.',
 })
 
 onMounted(() => {

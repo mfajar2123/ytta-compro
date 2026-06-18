@@ -201,6 +201,8 @@
 <script setup>
 useSeoMeta({
   title: 'Kebijakan Privasi',
-  description: 'Kebijakan dan prosedur Raja Emas Indonesia terkait pengumpulan, penggunaan, dan pengungkapan informasi pengguna.'
+  description: 'Kebijakan dan prosedur Raja Emas Indonesia terkait pengumpulan, penggunaan, dan pengungkapan informasi pengguna, serta keamanan privasi pelanggan kami.',
+  ogTitle: 'Kebijakan Privasi - Raja Emas Indonesia',
+  ogDescription: 'Kebijakan dan prosedur Raja Emas Indonesia terkait pengumpulan, penggunaan, dan pengungkapan informasi pengguna, serta keamanan privasi pelanggan kami.',
 })
 </script>

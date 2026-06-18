@@ -70,7 +70,7 @@
       @touchend="handleTouchEnd"
     >
       <div 
-        class="flex transition-transform duration-700 ease-in-out h-[60vh] sm:h-[80vh] md:h-screen"
+        class="flex transition-transform duration-700 ease-in-out aspect-[16/9] sm:aspect-video md:aspect-auto md:h-screen"
         :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
       >
         <div 
@@ -78,7 +78,7 @@
           :key="'slide-'+idx"
           class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian"
         >
-          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-cover object-top" loading="lazy" width="1920" height="1080" />
+          <img :src="`/img/home/slider/${img}`" :alt="`Promo dan Layanan Raja Emas Indonesia ${idx + 1}`" class="w-full h-full object-cover object-top" loading="lazy" width="1920" height="1080" />
         </div>
       </div>
       
@@ -187,7 +187,7 @@
       <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
         <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
           <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
-            <img :src="testi.image" alt="Customer Review" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" width="400" height="400" />
+            <img :src="testi.image" :alt="`Testimoni Pelanggan Raja Emas Indonesia di ${testi.platform}`" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" width="400" height="400" />
           </div>
         </div>
       </div>
@@ -315,10 +315,33 @@ const scrollTesti = (direction) => {
 
 useSeoMeta({
   title: 'Home',
-  titleTemplate: '%s - Raja Emas Indonesia',
+  titleTemplate: 'Raja Emas Indonesia - Jual Beli Logam Mulia & Custom Gold',
   description: siteData.company.about,
-  ogTitle: 'Raja Emas Indonesia - Investasi Emas Terpercaya',
-  ogDescription: siteData.company.tagline,
+  ogTitle: 'Raja Emas Indonesia - Jual Beli Logam Mulia & Custom Gold',
+  ogDescription: siteData.company.about,
+  twitterTitle: 'Raja Emas Indonesia - Jual Beli Logam Mulia & Custom Gold',
+  twitterDescription: siteData.company.about,
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: siteData.company.name,
+        url: 'https://rajaemasindonesia.co.id',
+        logo: 'https://rajaemasindonesia.co.id/img/home/logo.png',
+        description: siteData.company.about,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: siteData.company.contact.phone,
+          contactType: 'customer service'
+        }
+      })
+    }
+  ]
 })
 
 onMounted(() => {

@@ -100,9 +100,34 @@ const categorySubtitle = computed(() => {
 })
 
 useSeoMeta({
-  title: categoryTitle.value,
-  titleTemplate: '%s - Raja Emas Indonesia',
-  description: `Temukan koleksi eksklusif ${categoryTitle.value}.`,
+  title: categoryTitle,
+  description: categorySubtitle,
+  ogTitle: () => `${categoryTitle.value} - Raja Emas Indonesia`,
+  ogDescription: categorySubtitle,
+  twitterTitle: categoryTitle,
+  twitterDescription: categorySubtitle,
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: computed(() => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: categoryProducts.value.map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Product',
+            name: product.name,
+            description: product.description,
+            image: `https://rajaemasindonesia.co.id${product.image}`
+          }
+        }))
+      }))
+    }
+  ]
 })
 
 const categoryProducts = computed(() => {

@@ -125,9 +125,34 @@ const filteredStores = computed(() => {
 })
 
 useSeoMeta({
-  title: 'Offline Store',
-  titleTemplate: '%s - Raja Emas Indonesia',
-  description: 'Kunjungi cabang Raja Emas Indonesia terdekat untuk layanan langsung.',
+  title: 'Lokasi Cabang & Offline Store',
+  description: 'Temukan alamat lengkap cabang offline store Raja Emas Indonesia yang tersebar di lebih dari 70 lokasi di seluruh Indonesia. Jual beli emas murni dengan aman dan cek langsung keaslian logam mulia.',
+  ogTitle: 'Lokasi Cabang & Offline Store - Raja Emas Indonesia',
+  ogDescription: 'Temukan alamat lengkap cabang offline store Raja Emas Indonesia yang tersebar di lebih dari 70 lokasi di seluruh Indonesia.',
+  twitterTitle: 'Lokasi Cabang & Offline Store',
+  twitterDescription: 'Temukan alamat lengkap cabang offline store Raja Emas Indonesia yang tersebar di lebih dari 70 lokasi di seluruh Indonesia.',
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: computed(() => JSON.stringify(
+        siteData.stores.slice(0, 10).map(store => ({
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: `Raja Emas Indonesia - ${store.name}`,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: store.address,
+            addressCountry: 'ID'
+          },
+          telephone: store.phone,
+          url: 'https://rajaemasindonesia.co.id/offline-store'
+        }))
+      ))
+    }
+  ]
 })
 
 onMounted(() => {
