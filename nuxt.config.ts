@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: '2026-06-12',
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       htmlAttrs: {
         lang: 'id'
@@ -14,11 +16,8 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#111111' },
       ],
       link: [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
-        { rel: 'icon', type: 'image/png', href: '/img/home/logo.png' },
-        { rel: 'apple-touch-icon', href: '/img/home/logo.png' }
+        { rel: 'icon', type: 'image/webp', href: '/img/home/logo.webp' },
+        { rel: 'apple-touch-icon', href: '/img/home/logo.webp' }
       ]
     }
   },
@@ -29,5 +28,22 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-icon", "@nuxt/image"],
+  modules: ["nuxt-icon", "@nuxt/image", "@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      'El Messiri': [400, 500, 600, 700],
+      'Raleway': [400, 500, 600, 700],
+    },
+    display: 'swap',
+    download: true,
+  },
+  routeRules: {
+    '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.js': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.css': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.webp': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.png': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.jpg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/**/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+  },
 });

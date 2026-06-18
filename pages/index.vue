@@ -13,53 +13,39 @@
           <!-- Text Content -->
           <div class="max-w-2xl text-center lg:text-left order-2 lg:order-1 mx-auto lg:mx-0">
             <div class="hero-title">
-              <h1 class="block text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-4 tracking-tight leading-tight">
+              <h1 class="block hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-4 tracking-tight leading-tight">
                 About <br class="hidden lg:block"/>Emas Murni Asli
               </h1>
-              <h2 class="block text-xl sm:text-2xl lg:text-3xl text-goldensand font-medium mb-6 lg:mb-8 leading-snug">
+              <h2 class="block hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-100 text-xl sm:text-2xl lg:text-3xl text-goldensand font-medium mb-6 lg:mb-8 leading-snug">
                 Exclusive Gifts for Meaningful Moments
               </h2>
             </div>
             
             <div class="hero-text space-y-4 text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
-              <p>
+              <p class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-200">
                 <strong class="text-white font-medium">PT Emas Murni Asli</strong> adalah penyedia logam mulia 24 Karat (99,99%) yang dapat digunakan untuk hadiah (gift), apresiasi, penghargaan, souvenir, dan investasi. Melalui brand <strong class="text-white font-medium">Raja Emas Indonesia</strong>, kami menghadirkan berbagai pilihan <strong class="text-white font-medium">emas batangan</strong> serta <strong class="text-white font-medium">layanan custom</strong> yang dapat disesuaikan dengan kebutuhan individu, komunitas, perusahaan, maupun instansi.
               </p>
-              <p>
+              <p class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-300">
                 Dengan mengutamakan kualitas, desain eksklusif, dan layanan profesional, kami membantu menciptakan hadiah emas yang tidak hanya berkesan, tetapi juga memiliki nilai yang bertahan dan terus berkembang dari waktu ke waktu.
               </p>
             </div>
 
             <!-- CTAs -->
             <div class="hero-cta flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <NuxtLink to="/products/logam-series" class="w-full sm:w-auto px-8 py-4 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-500 hover:shadow-[0_0_20px_rgba(211,168,95,0.4)] hover:-translate-y-1 transition-all duration-300 text-center">
+              <NuxtLink to="/products/logam-series" class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-500 w-full sm:w-auto px-8 py-4 bg-goldensand text-blackobsidian font-bold rounded-full hover:bg-yellow-500 hover:shadow-[0_0_20px_rgba(211,168,95,0.4)] hover:-translate-y-1 text-center">
                 Koleksi Logam Series
               </NuxtLink>
-              <NuxtLink to="/offline-store" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-white/40 hover:-translate-y-1 transition-all duration-300 text-center">
+              <NuxtLink to="/offline-store" class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-[600ms] w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:border-white/40 hover:-translate-y-1 text-center">
                 Hubungi Kami
               </NuxtLink>
             </div>
           </div>
 
           <!-- Video Container -->
-          <div class="hero-video order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
-            <!-- Decorative Glow Behind Video -->
+          <div class="hero-video hero-anim opacity-0 scale-95 translate-x-12 transition-all duration-1000 ease-out delay-300 order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
             <div class="absolute -inset-4 bg-gradient-to-tr from-goldensand/40 via-transparent to-darkamethyst/40 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
-            
-            <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-blackobsidian shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/_DMsSlzT9T0?autoplay=1&mute=1&loop=1&playlist=_DMsSlzT9T0&controls=0&rel=0"
-                class="w-full aspect-video max-h-[80vh]"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-                title="Raja Emas Indonesia Corporate Video"
-              ></iframe>
-              
-              <!-- Subtle inner shadow to blend video edges -->
-              <div class="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] pointer-events-none"></div>
-            </div>
+            <!-- Use YoutubeFacade instead of raw iframe to save 2MB FCP -->
+            <YoutubeFacade videoId="_DMsSlzT9T0" title="Raja Emas Indonesia Corporate Video" />
           </div>
         </div>
       </div>
@@ -113,206 +99,33 @@
       </div>
     </section>
 
-    <!-- Partners Marquee -->
-    <section class="py-16 bg-whitedust border-b border-gray-200">
-      <div class="w-full overflow-hidden">
-        <div class="container mx-auto px-4 mb-8 text-center">
-          <h3 class="text-xl font-semibold text-gray-500">Telah Dipercaya Oleh:</h3>
-        </div>
-        <div class="relative flex w-full overflow-hidden group">
-          <!-- First Track -->
-          <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
-            <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <NuxtImg :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" format="webp" width="200" height="100" />
-            </div>
-          </div>
-          <!-- Second Track (Duplicate for infinite loop) -->
-          <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
-            <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <NuxtImg :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" format="webp" width="200" height="100" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Lazy Loaded Sections below the fold -->
+    <LazyHomePartnerSection />
+    <LazyHomeFeatureSection />
+    <LazyHomeTestimonialSection />
+    <LazyHomeFaqSection />
 
-    <!-- Services / Features Section -->
-    <section class="py-24 bg-whitedust border-t border-gray-200">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="gsap-fade-up text-4xl md:text-5xl font-semibold mb-4 text-blackobsidian">Mengapa <span class="text-goldensand">Raja Emas?</span></h2>
-          <p class="gsap-fade-up text-gray-600 max-w-2xl mx-auto text-lg">Bandingkan dengan tempat lain, Anda akan merasakan bedanya. Proses mudah, transparan, dan harga beli tertinggi.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Featured large card -->
-          <div class="feature-card lg:col-span-2 bg-blackobsidian rounded-[2rem] p-8 md:p-12 shadow-2xl text-white relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-goldensand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <div class="relative z-10">
-              <div class="w-16 h-16 bg-goldensand text-blackobsidian rounded-2xl flex items-center justify-center mb-6">
-                <Icon :name="siteData.features[0].icon" class="text-3xl" />
-              </div>
-              <h3 class="text-3xl font-semibold mb-4 text-goldensand">{{ siteData.features[0].title }}</h3>
-              <p class="text-gray-300 text-lg leading-relaxed font-sans max-w-xl">{{ siteData.features[0].description }}</p>
-            </div>
-          </div>
-          
-          <!-- Smaller cards -->
-          <div v-for="(feature, idx) in siteData.features.slice(1)" :key="'feat-'+idx" class="feature-card bg-white rounded-[2rem] p-8 shadow-xl border border-goldensand/20 hover:border-goldensand transition-colors group">
-            <div class="w-14 h-14 bg-whitedust text-goldensand rounded-xl flex items-center justify-center mb-6 group-hover:bg-goldensand group-hover:text-white transition-colors duration-300">
-              <Icon :name="feature.icon" class="text-2xl" />
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-blackobsidian">{{ feature.title }}</h3>
-            <p class="text-gray-600 font-sans leading-relaxed text-sm">{{ feature.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials (Swipeable Carousel) -->
-    <section class="py-24 bg-whitedust relative overflow-hidden">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
-        <div class="gsap-fade-up">
-          <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-blackobsidian">Apa Kata <span class="text-goldensand">Klien Kami</span></h2>
-          <p class="text-gray-600 max-w-xl text-lg font-sans">Geser untuk melihat testimoni dari pelanggan yang telah mempercayakan investasi dan kebutuhan emasnya kepada Raja Emas Indonesia.</p>
-        </div>
-        <div class="gsap-fade-up hidden md:flex gap-4">
-          <button aria-label="Previous Review" @click="scrollTesti('left')" class="w-12 h-12 rounded-full border border-goldensand flex items-center justify-center text-goldensand hover:bg-goldensand hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-goldensand">
-            <Icon name="mdi:chevron-left" class="text-2xl" />
-          </button>
-          <button aria-label="Next Review" @click="scrollTesti('right')" class="w-12 h-12 rounded-full border border-goldensand flex items-center justify-center text-goldensand hover:bg-goldensand hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-goldensand">
-            <Icon name="mdi:chevron-right" class="text-2xl" />
-          </button>
-        </div>
-      </div>
-
-      <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
-        <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
-          <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
-            <NuxtImg :src="testi.image" :alt="`Testimoni Pelanggan Raja Emas Indonesia di ${testi.platform}`" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" format="webp" width="400" height="400" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-24 bg-white relative overflow-hidden border-t border-gray-100">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl">
-        <div class="text-center mb-16 gsap-fade-up">
-          <!-- <span class="inline-block py-1.5 px-4 rounded-full bg-whitedust border border-gray-200 text-goldensand text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
-            Pertanyaan Umum
-          </span> -->
-          <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-blackobsidian tracking-tight">
-            <span class="text-goldensand">Frequently Ask Question</span> (FAQ)
-          </h2>
-          <p class="text-gray-500 max-w-2xl mx-auto text-lg font-sans">
-            Temukan jawaban atas pertanyaan yang paling sering diajukan seputar layanan pembelian, penjualan, dan pengecekan emas di Raja Emas Indonesia.
-          </p>
-        </div>
-
-        <!-- FAQ Tabs -->
-        <div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4 px-4 -mx-4 justify-start md:justify-center mb-10 gsap-fade-up">
-          <button 
-            v-for="(_, category) in siteData.faqs" 
-            :key="category"
-            @click="activeCategory = category; activeFaq = null"
-            class="px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border-2 text-sm sm:text-base whitespace-nowrap"
-            :class="activeCategory === category ? 'bg-goldensand border-goldensand text-white shadow-md' : 'bg-transparent border-gray-200 text-gray-500 hover:border-goldensand hover:text-goldensand'"
-          >
-            {{ category }}
-          </button>
-        </div>
-
-        <div class="space-y-4 max-w-4xl mx-auto gsap-fade-up">
-          <div 
-            v-for="(faq, index) in siteData.faqs[activeCategory]" 
-            :key="index"
-            class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 bg-white"
-            :class="{'ring-1 ring-goldensand shadow-lg': activeFaq === index}"
-          >
-            <button 
-              @click="toggleFaq(index)"
-              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-whitedust/50 transition-colors"
-            >
-              <h3 class="font-semibold text-lg text-blackobsidian pr-8" :class="{'text-goldensand': activeFaq === index}">
-                {{ faq.question }}
-              </h3>
-              <div class="flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300" :class="activeFaq === index ? 'rotate-180 border-goldensand bg-goldensand text-white' : 'border-gray-300 text-gray-500 bg-white'">
-                <Icon name="mdi:chevron-down" class="text-xl" />
-              </div>
-            </button>
-            <div 
-              class="overflow-hidden transition-all duration-300 ease-in-out"
-              :style="{ maxHeight: activeFaq === index ? '500px' : '0', opacity: activeFaq === index ? 1 : 0 }"
-            >
-              <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-                <p class="text-gray-600 font-sans leading-relaxed">
-                  {{ faq.answer }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import siteData from '~/data/siteData.json'
 
-gsap.registerPlugin(ScrollTrigger)
-
-const testiContainer = ref(null)
+// Slider Logic
 const currentSlide = ref(0)
-
-const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % siteData.heroSlider.length
-}
-const prevSlide = () => {
-  currentSlide.value = currentSlide.value === 0 ? siteData.heroSlider.length - 1 : currentSlide.value - 1
-}
+const nextSlide = () => { currentSlide.value = (currentSlide.value + 1) % siteData.heroSlider.length }
+const prevSlide = () => { currentSlide.value = currentSlide.value === 0 ? siteData.heroSlider.length - 1 : currentSlide.value - 1 }
 
 const touchStartX = ref(0)
 const touchEndX = ref(0)
 
-const handleTouchStart = (e) => {
-  touchStartX.value = e.changedTouches[0].screenX
-}
-
+const handleTouchStart = (e) => { touchStartX.value = e.changedTouches[0].screenX }
 const handleTouchEnd = (e) => {
   touchEndX.value = e.changedTouches[0].screenX
-  handleSwipe()
-}
-
-const handleSwipe = () => {
   const swipeThreshold = 50
-  if (touchEndX.value < touchStartX.value - swipeThreshold) {
-    nextSlide()
-  }
-  if (touchEndX.value > touchStartX.value + swipeThreshold) {
-    prevSlide()
-  }
-}
-
-const activeCategory = ref(Object.keys(siteData.faqs)[0])
-const activeFaq = ref(null)
-
-const toggleFaq = (index) => {
-  activeFaq.value = activeFaq.value === index ? null : index
-}
-
-const scrollTesti = (direction) => {
-  if (testiContainer.value) {
-    const scrollAmount = window.innerWidth > 768 ? 450 + 24 : window.innerWidth * 0.85;
-    testiContainer.value.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth'
-    })
-  }
+  if (touchEndX.value < touchStartX.value - swipeThreshold) nextSlide()
+  if (touchEndX.value > touchStartX.value + swipeThreshold) prevSlide()
 }
 
 useSeoMeta({
@@ -334,7 +147,7 @@ useHead({
         '@type': 'Organization',
         name: siteData.company.name,
         url: 'https://rajaemasindonesia.co.id',
-        logo: 'https://rajaemasindonesia.co.id/img/home/logo.png',
+        logo: 'https://rajaemasindonesia.co.id/img/home/logo.webp',
         description: siteData.company.about,
         contactPoint: {
           '@type': 'ContactPoint',
@@ -347,101 +160,13 @@ useHead({
 })
 
 onMounted(() => {
-  // Delay GSAP initialization to avoid blocking main thread during hydration
+  // Simple Hero Animation Trigger without GSAP
   setTimeout(() => {
-    // Hero Animations
-    const tl = gsap.timeline()
-    
-    tl.fromTo('.hero-video',
-      { x: 50, opacity: 0, scale: 0.95 },
-      { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
-    )
-  .fromTo('.hero-title .block', 
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' },
-    "-=0.8"
-  )
-  .fromTo('.hero-text p',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
-    "-=0.6"
-  )
-  .fromTo('.hero-cta a',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-    "-=0.6"
-  )
-
-  // Scroll Animations for generic fade up elements
-  gsap.set('.gsap-fade-up', { y: 50, opacity: 0 })
-  ScrollTrigger.batch('.gsap-fade-up', {
-    onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
-      y: 0, 
-      duration: 0.8,
-      stagger: 0.1, 
-      ease: 'power2.out',
-      overwrite: true
-    }),
-    start: 'top 90%',
-    once: true // Animate only once to save GPU memory on scroll
-  })
-
-  // Feature cards optimized batch animation
-  gsap.set('.feature-card', { y: 50, opacity: 0 })
-  ScrollTrigger.batch('.feature-card', {
-    onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
-      y: 0, 
-      duration: 0.8,
-      stagger: 0.15, 
-      ease: 'power2.out',
-      overwrite: true
-    }),
-    start: 'top 90%',
-    once: true
-  })
-  }, 100) // 100ms delay to free up the main thread
+    const heroElements = document.querySelectorAll('.hero-anim')
+    heroElements.forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-12', 'translate-x-12', 'scale-95')
+      el.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100')
+    })
+  }, 100)
 })
 </script>
-
-<style scoped>
-.animate-marquee-infinite {
-  animation: marquee-infinite 35s linear infinite;
-  will-change: transform;
-}
-
-.group:hover .animate-marquee-infinite {
-  animation-play-state: paused;
-}
-
-@keyframes marquee-infinite {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Custom Scrollbar for pricing table */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(211, 168, 95, 0.3); /* goldensand with opacity */
-  border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(211, 168, 95, 0.8);
-}
-
-/* Hide scrollbar for carousel but keep functionality */
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-.hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
-</style>

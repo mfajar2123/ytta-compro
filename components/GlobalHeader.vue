@@ -9,7 +9,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" />
+            <NuxtImg src="/img/home/logo.webp" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" format="webp" />
             <span class="font-semibold text-xl tracking-tight text-white font-heading">
               Raja Emas Indonesia
             </span>

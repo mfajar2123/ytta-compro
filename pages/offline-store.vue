@@ -7,8 +7,8 @@
       </div>
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-4xl">
-          <h1 class="hero-title text-5xl md:text-7xl font-semibold mb-6 text-white tracking-tight">Our <span class="text-goldensand">Offline Store</span></h1>
-          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">Store Raja Emas Indonesia telah tersebar di 70 lokasi di seluruh Indonesia. Kunjungi store terdekat di kotamu untuk cek langsung keaslian logam mulia atau emas custom menggunakan mesin XRF dengan hasil akurat 100%.</p>
+          <h1 class="hero-title hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out text-5xl md:text-7xl font-semibold mb-6 text-white tracking-tight">Our <span class="text-goldensand">Offline Store</span></h1>
+          <p class="hero-subtitle hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-100 text-xl md:text-2xl text-gray-400">Store Raja Emas Indonesia telah tersebar di 70 lokasi di seluruh Indonesia. Kunjungi store terdekat di kotamu untuk cek langsung keaslian logam mulia atau emas custom menggunakan mesin XRF dengan hasil akurat 100%.</p>
         </div>
       </div>
     </section>
@@ -108,10 +108,9 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import siteData from '~/data/siteData.json'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useFadeUp } from '~/composables/useFadeUp'
 
-gsap.registerPlugin(ScrollTrigger)
+useFadeUp()
 
 const searchQuery = ref('')
 
@@ -156,52 +155,14 @@ useHead({
 })
 
 onMounted(() => {
-  const tl = gsap.timeline()
-  
-  tl.fromTo('.hero-bg-icon',
-    { scale: 0.8, opacity: 0, rotation: 15 },
-    { scale: 1, opacity: 0.1, rotation: 0, duration: 1.5, ease: 'power3.out' }
-  )
-  .fromTo('.hero-title',
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-    "-=1"
-  )
-  .fromTo('.hero-subtitle',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
-    "-=0.6"
-  )
-
-  // OPTIMIZATION: Use ScrollTrigger.batch for large lists (68 items)
-  // This animates cards in chunks as they enter the viewport, rather than all at once
-  gsap.set('.store-card', { y: 50, opacity: 0 })
-  
-  ScrollTrigger.batch('.store-card', {
-    interval: 0.1,
-    batchMax: 6,
-    onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
-      y: 0, 
-      duration: 0.6,
-      stagger: 0.1, 
-      ease: 'power2.out',
-      overwrite: true
-    }),
-    start: 'top 95%',
-  })
-
-  // Parallax effect on scroll
-  gsap.to('.hero-section', {
-    yPercent: 30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#store-page",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    }
-  })
+  // Fallback for hero without GSAP
+  setTimeout(() => {
+    const heroElements = document.querySelectorAll('.hero-anim')
+    heroElements.forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-12', 'scale-95')
+      el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+    })
+  }, 100)
 })
 </script>
 

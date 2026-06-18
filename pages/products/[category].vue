@@ -7,8 +7,8 @@
       </div>
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="max-w-4xl mx-auto">
-          <h1 class="hero-title text-5xl md:text-7xl font-semibold mb-6 text-goldensand tracking-tight">{{ categoryTitle }}</h1>
-          <p class="hero-subtitle text-xl md:text-2xl text-gray-400">{{ categorySubtitle }}</p>
+          <h1 class="hero-title hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out text-5xl md:text-7xl font-semibold mb-6 text-goldensand tracking-tight">{{ categoryTitle }}</h1>
+          <p class="hero-subtitle hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-100 text-xl md:text-2xl text-gray-400">{{ categorySubtitle }}</p>
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@
             class="product-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform snap-start"
           >
             <div class="relative h-56 md:h-64 flex-shrink-0 overflow-hidden bg-lightamethyst flex items-center justify-center p-6 group/img">
-              <img :src="product.image" :alt="product.name" class="product-image h-full w-full object-contain rounded-2xl group-hover/img:scale-110 transition-transform duration-700 ease-out" loading="lazy" width="600" height="600" />
+              <NuxtImg :src="product.image" :alt="product.name" class="product-image h-full w-full object-contain rounded-2xl group-hover/img:scale-110 transition-transform duration-700 ease-out" loading="lazy" format="webp" width="600" height="600" />
               <div class="absolute top-6 right-6 bg-goldensand/90 backdrop-blur-sm text-blackobsidian text-sm font-bold px-4 py-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover/img:translate-y-0 group-hover/img:opacity-100 transition-all duration-300">
                 {{ product.weight }}
               </div>
@@ -70,11 +70,10 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useFadeUp } from '~/composables/useFadeUp'
 import siteData from '~/data/siteData.json'
 
-gsap.registerPlugin(ScrollTrigger)
+useFadeUp()
 
 const route = useRoute()
 const category = route.params.category
@@ -97,6 +96,10 @@ const categorySubtitle = computed(() => {
     return 'Eksplorasi berbagai karya dan mahakarya desain logam mulia yang telah kami ciptakan untuk klien-klien terbaik Raja Emas Indonesia.'
   }
   return `Temukan koleksi eksklusif ${categoryTitle.value} dari Raja Emas Indonesia.`
+})
+
+const categoryProducts = computed(() => {
+  return siteData.products[category] || []
 })
 
 useSeoMeta({
@@ -130,9 +133,6 @@ useHead({
   ]
 })
 
-const categoryProducts = computed(() => {
-  return siteData.products[category] || []
-})
 
 const sliderContainer = ref(null)
 
@@ -149,51 +149,14 @@ const scrollSlider = (direction) => {
 }
 
 onMounted(() => {
-  // Hero Animation
-  const tl = gsap.timeline()
-  
-  tl.fromTo('.hero-bg-icon',
-    { scale: 0.8, opacity: 0, rotation: -15 },
-    { scale: 1, opacity: 0.1, rotation: 0, duration: 1.5, ease: 'power3.out' }
-  )
-  .fromTo('.hero-title',
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-    "-=1"
-  )
-  .fromTo('.hero-subtitle',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
-    "-=0.6"
-  )
-
-  // Complex Scroll Animation for Cards
-  gsap.set('.product-card', { y: 100, opacity: 0, scale: 0.95 })
-  ScrollTrigger.batch('.product-card', {
-    onEnter: batch => gsap.to(batch, {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'back.out(1.2)',
-      overwrite: true
-    }),
-    start: 'top 85%',
-    once: true
-  })
-
-  // Parallax effect on scroll
-  gsap.to('.hero-section', {
-    yPercent: 30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#product-page",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    }
-  })
+  // Fallback for hero without GSAP
+  setTimeout(() => {
+    const heroElements = document.querySelectorAll('.hero-anim')
+    heroElements.forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-12', 'scale-95')
+      el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+    })
+  }, 100)
 })
 </script>
 

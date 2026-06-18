@@ -13,25 +13,25 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <div class="max-w-2xl text-center lg:text-left order-2 lg:order-1 mx-auto lg:mx-0">
             <div class="hero-title">
-              <span class="inline-block py-1.5 px-4 rounded-full bg-goldensand/10 border border-goldensand/30 text-goldensand text-sm font-semibold tracking-widest uppercase mb-4">
+              <span class="inline-block py-1.5 px-4 rounded-full bg-goldensand/10 border border-goldensand/30 text-goldensand text-sm font-semibold tracking-widest uppercase mb-4 hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out">
                 Mengapa Memilih Kami?
               </span>
-              <h1 class="block text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
+              <h1 class="block text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-100">
                 <span class="text-goldensand">Custom Gold</span> Design
               </h1>
             </div>
             
             <div class="hero-subtitle space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
-              <p>
+              <p class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-200">
                 Di <strong class="text-white font-semibold">Raja Emas Indonesia</strong>, kami menghadirkan layanan <strong class="text-white font-semibold">Custom Gold Design</strong> yang memungkinkan setiap logo, simbol, karakter, maupun desain khusus diwujudkan pada emas murni 24 Karat (99,9%) dan request karat lainnya. Dengan teknologi produksi presisi dan pengerjaan yang detail, setiap desain tampil lebih eksklusif, berkarakter, dan memiliki nilai yang lebih dari sekadar logam mulia.
               </p>
-              <p>
+              <p class="hero-anim opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-300">
                 Emas custom bukan hanya sebuah produk hadiah atau souvenir. Ia menjadi representasi identitas, apresiasi, dan citra yang ingin ditampilkan oleh individu, komunitas, perusahaan, maupun instansi.
               </p>
             </div>
           </div>
 
-          <div class="hero-video order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
+          <div class="hero-video hero-anim opacity-0 scale-95 translate-x-12 transition-all duration-1000 ease-out delay-500 order-1 lg:order-2 w-full max-w-2xl mx-auto lg:max-w-none relative group">
             <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-blackobsidian shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
               <video 
                 src="/vid/LM_REI.mp4" 
@@ -53,10 +53,9 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useFadeUp } from '~/composables/useFadeUp'
 
-gsap.registerPlugin(ScrollTrigger)
+useFadeUp()
 
 useSeoMeta({
   title: 'Jasa Pembuatan Custom Gold & Logam Mulia',
@@ -86,34 +85,13 @@ useHead({
 })
 
 onMounted(() => {
-  // Hero Animation
-  const tl = gsap.timeline()
-  
-  tl.fromTo('.hero-video',
-    { x: 50, opacity: 0, scale: 0.95 },
-    { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
-  )
-  .fromTo('.hero-title',
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-    "-=0.8"
-  )
-  .fromTo('.hero-subtitle p',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
-    "-=0.6"
-  )
-
-  // Parallax effect on scroll
-  gsap.to('.hero-section', {
-    yPercent: 30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#custom-gold-page",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    }
-  })
+  // Fallback for hero without GSAP
+  setTimeout(() => {
+    const heroElements = document.querySelectorAll('.hero-anim')
+    heroElements.forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-12', 'scale-95')
+      el.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+    })
+  }, 100)
 })
 </script>

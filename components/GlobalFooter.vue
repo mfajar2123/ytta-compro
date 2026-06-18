@@ -6,7 +6,7 @@
         <!-- Brand -->
         <div class="space-y-4">
           <NuxtLink to="/" class="flex items-center gap-2">
-            <img src="/img/home/logo.png" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" loading="lazy" />
+            <NuxtImg src="/img/home/logo.webp" alt="Raja Emas Logo" class="h-10 w-auto" width="40" height="40" loading="lazy" format="webp" />
             <span class="font-semibold text-2xl tracking-tight text-white font-heading">Raja Emas Indonesia</span>
           </NuxtLink>
           <p class="text-gray-400 max-w-sm">

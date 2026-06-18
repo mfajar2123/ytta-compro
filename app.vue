@@ -16,9 +16,9 @@ useSeoMeta({
   ogSiteName: siteData.company.name,
   ogType: 'website',
   ogUrl: () => `${siteUrl}${route.path}`,
-  ogImage: '/img/home/logo.png',
+  ogImage: '/img/home/logo.webp',
   twitterCard: 'summary_large_image',
-  twitterImage: '/img/home/logo.png',
+  twitterImage: '/img/home/logo.webp',
 })
 
 useHead({
