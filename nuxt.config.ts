@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#111111' },
       ],
       link: [
+        { rel: 'preconnect', href: 'https://img.youtube.com' },
         { rel: 'icon', type: 'image/webp', href: '/img/home/logo.webp' },
         { rel: 'apple-touch-icon', href: '/img/home/logo.webp' }
       ]

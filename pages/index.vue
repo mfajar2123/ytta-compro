@@ -67,10 +67,10 @@
           class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian overflow-hidden"
         >
           <!-- Ambient Blurred Background (Hanya di Desktop) -->
-          <NuxtImg :src="`/img/home/slider/${img}`" aria-hidden="true" class="hidden md:block absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-50 saturate-150" :loading="idx === 0 ? 'eager' : 'lazy'" format="webp" width="1920" height="1080" />
+          <NuxtImg :src="`/img/home/slider/${img}`" aria-hidden="true" class="hidden md:block absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-50 saturate-150" :loading="idx === 0 ? 'eager' : 'lazy'" format="webp" width="1920" height="1080" sizes="sm:100vw md:100vw lg:100vw xl:1920px" />
           
           <!-- Main Image -->
-          <NuxtImg :src="`/img/home/slider/${img}`" :alt="`Promo dan Layanan Raja Emas Indonesia ${idx + 1}`" class="relative z-10 w-full h-full object-cover object-top md:object-contain drop-shadow-2xl" :loading="idx === 0 ? 'eager' : 'lazy'" :fetchpriority="idx === 0 ? 'high' : 'auto'" :preload="idx === 0" format="webp" width="1920" height="1080" />
+          <NuxtImg :src="`/img/home/slider/${img}`" :alt="`Promo dan Layanan Raja Emas Indonesia ${idx + 1}`" class="relative z-10 w-full h-full object-cover object-top md:object-contain drop-shadow-2xl" :loading="idx === 0 ? 'eager' : 'lazy'" :fetchpriority="idx === 0 ? 'high' : 'auto'" :preload="idx === 0" format="webp" width="1920" height="1080" sizes="sm:100vw md:100vw lg:100vw xl:1920px" />
         </div>
       </div>
       
