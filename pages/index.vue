@@ -48,11 +48,13 @@
             
             <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-blackobsidian shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] flex items-center justify-center">
               <iframe
-                src="https://www.youtube.com/embed/_DMsSlzT9T0?autoplay=1&mute=1&loop=1&playlist=_DMsSlzT9T0&controls=0&rel=0"
+                src="https://www.youtube-nocookie.com/embed/_DMsSlzT9T0?autoplay=1&mute=1&loop=1&playlist=_DMsSlzT9T0&controls=0&rel=0"
                 class="w-full aspect-video max-h-[80vh]"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
+                loading="lazy"
+                title="Raja Emas Indonesia Corporate Video"
               ></iframe>
               
               <!-- Subtle inner shadow to blend video edges -->
@@ -78,7 +80,7 @@
           :key="'slide-'+idx"
           class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian"
         >
-          <img :src="`/img/home/slider/${img}`" :alt="`Promo dan Layanan Raja Emas Indonesia ${idx + 1}`" class="w-full h-full object-cover object-top" loading="lazy" width="1920" height="1080" />
+          <NuxtImg :src="`/img/home/slider/${img}`" :alt="`Promo dan Layanan Raja Emas Indonesia ${idx + 1}`" class="w-full h-full object-cover object-top" :loading="idx === 0 ? 'eager' : 'lazy'" :fetchpriority="idx === 0 ? 'high' : 'auto'" :preload="idx === 0" format="webp" width="1920" height="1080" />
         </div>
       </div>
       
@@ -121,13 +123,13 @@
           <!-- First Track -->
           <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0">
             <div v-for="i in 8" :key="`p1-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <img :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" width="200" height="100" />
+              <NuxtImg :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" format="webp" width="200" height="100" />
             </div>
           </div>
           <!-- Second Track (Duplicate for infinite loop) -->
           <div class="animate-marquee-infinite flex whitespace-nowrap items-center shrink-0" aria-hidden="true">
             <div v-for="i in 8" :key="`p2-${i}`" class="px-8 md:px-12 lg:px-16 flex items-center justify-center">
-              <img :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" width="200" height="100" />
+              <NuxtImg :src="siteData.partners[(i - 1) % siteData.partners.length].logo" :alt="siteData.partners[(i - 1) % siteData.partners.length].name" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[200px] md:max-w-[250px] object-contain hover:scale-110 transition-all duration-500 drop-shadow-sm cursor-pointer" loading="lazy" format="webp" width="200" height="100" />
             </div>
           </div>
         </div>
@@ -187,7 +189,7 @@
       <div class="w-full relative px-4 sm:px-6 lg:px-8 gsap-fade-up">
         <div ref="testiContainer" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
           <div v-for="(testi, index) in siteData.testimonials" :key="'testi-'+index" class="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center shrink-0 bg-white p-2 rounded-[2rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 relative group h-[350px] sm:h-[400px]">
-            <img :src="testi.image" :alt="`Testimoni Pelanggan Raja Emas Indonesia di ${testi.platform}`" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" width="400" height="400" />
+            <NuxtImg :src="testi.image" :alt="`Testimoni Pelanggan Raja Emas Indonesia di ${testi.platform}`" class="w-full h-full rounded-[1.5rem] object-contain" loading="lazy" format="webp" width="400" height="400" />
           </div>
         </div>
       </div>
@@ -345,13 +347,15 @@ useHead({
 })
 
 onMounted(() => {
-  // Hero Animations
-  const tl = gsap.timeline()
-  
-  tl.fromTo('.hero-video',
-    { x: 50, opacity: 0, scale: 0.95 },
-    { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
-  )
+  // Delay GSAP initialization to avoid blocking main thread during hydration
+  setTimeout(() => {
+    // Hero Animations
+    const tl = gsap.timeline()
+    
+    tl.fromTo('.hero-video',
+      { x: 50, opacity: 0, scale: 0.95 },
+      { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
+    )
   .fromTo('.hero-title .block', 
     { y: 50, opacity: 0 },
     { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' },
@@ -397,12 +401,14 @@ onMounted(() => {
     start: 'top 90%',
     once: true
   })
+  }, 100) // 100ms delay to free up the main thread
 })
 </script>
 
 <style scoped>
 .animate-marquee-infinite {
   animation: marquee-infinite 35s linear infinite;
+  will-change: transform;
 }
 
 .group:hover .animate-marquee-infinite {
