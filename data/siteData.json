@@ -342,6 +342,56 @@
       "id": "rev-7",
       "image": "/img/review/review-wa-2.jpeg",
       "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-8",
+      "image": "/img/review/Review 1.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-9",
+      "image": "/img/review/Review 2.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-10",
+      "image": "/img/review/Review 3.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-11",
+      "image": "/img/review/Review 4.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-12",
+      "image": "/img/review/Review 5.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-13",
+      "image": "/img/review/Review 6.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-14",
+      "image": "/img/review/Review 7.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-15",
+      "image": "/img/review/Review 8.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-16",
+      "image": "/img/review/Review 9.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-17",
+      "image": "/img/review/Review 10.png",
+      "platform": "WhatsApp"
     }
   ],
   "products": {
@@ -527,45 +577,73 @@
     "portofolio": [
       {
         "id": "pf-1",
-        "name": "Karya Custom 1",
+        "name": "Portofolio BPJS 1",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Contoh desain karya logam mulia eksklusif untuk perayaan ulang tahun perusahaan."
+        "image": "/img/product/portofolio/BPJS 1.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk BPJS."
       },
       {
         "id": "pf-2",
-        "name": "Karya Custom 2",
+        "name": "Portofolio BPJS 2",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Contoh desain pin emas penghargaan dengan detail presisi tinggi."
+        "image": "/img/product/portofolio/BPJS 2.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk BPJS."
       },
       {
         "id": "pf-3",
-        "name": "Karya Custom 3",
+        "name": "Portofolio DPRD 1",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Desain custom plakat emas murni untuk instansi."
+        "image": "/img/product/portofolio/DPRD 1.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk DPRD."
       },
       {
         "id": "pf-4",
-        "name": "Karya Custom 4",
+        "name": "Portofolio DPRD 2",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Medali emas murni untuk kompetisi tingkat nasional."
+        "image": "/img/product/portofolio/DPRD 2.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk DPRD."
       },
       {
         "id": "pf-5",
-        "name": "Karya Custom 5",
+        "name": "Portofolio Custom 1",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Koin emas souvenir dengan ukiran logo khusus."
+        "image": "/img/product/portofolio/DSC02951.png",
+        "description": "Karya desain logam mulia eksklusif."
       },
       {
         "id": "pf-6",
-        "name": "Karya Custom 6",
+        "name": "Portofolio Custom 2",
         "weight": "Portfolio",
-        "image": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&q=80&w=600&h=600",
-        "description": "Karya desain logam mulia eksklusif edisi terbatas."
+        "image": "/img/product/portofolio/DSC02952.png",
+        "description": "Karya desain logam mulia eksklusif."
+      },
+      {
+        "id": "pf-7",
+        "name": "Portofolio Gembus 1",
+        "weight": "Portfolio",
+        "image": "/img/product/portofolio/Gembus 1.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk Gembus."
+      },
+      {
+        "id": "pf-8",
+        "name": "Portofolio Gembus 2",
+        "weight": "Portfolio",
+        "image": "/img/product/portofolio/Gembus 2.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk Gembus."
+      },
+      {
+        "id": "pf-9",
+        "name": "Portofolio Korpri 1",
+        "weight": "Portfolio",
+        "image": "/img/product/portofolio/Korpri 1.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk Korpri."
+      },
+      {
+        "id": "pf-10",
+        "name": "Portofolio Korpri 2",
+        "weight": "Portfolio",
+        "image": "/img/product/portofolio/Korpri 2.jpeg",
+        "description": "Karya desain logam mulia eksklusif untuk Korpri."
       }
     ]
   },
