@@ -64,7 +64,11 @@
     </section>
 
     <!-- About Slider -->
-    <section class="relative w-full overflow-hidden bg-blackobsidian group">
+    <section 
+      class="relative w-full h-full overflow-hidden bg-blackobsidian group"
+      @touchstart="handleTouchStart"
+      @touchend="handleTouchEnd"
+    >
       <div 
         class="flex transition-transform duration-700 ease-in-out h-[60vh] sm:h-[80vh] md:h-screen"
         :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
@@ -74,7 +78,7 @@
           :key="'slide-'+idx"
           class="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-blackobsidian"
         >
-          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-contain" loading="lazy" width="1920" height="1080" />
+          <img :src="`/img/home/slider/${img}`" alt="Slider Image" class="w-full h-full object-cover object-top" loading="lazy" width="1920" height="1080" />
         </div>
       </div>
       
@@ -268,6 +272,28 @@ const nextSlide = () => {
 }
 const prevSlide = () => {
   currentSlide.value = currentSlide.value === 0 ? siteData.heroSlider.length - 1 : currentSlide.value - 1
+}
+
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+const handleTouchStart = (e) => {
+  touchStartX.value = e.changedTouches[0].screenX
+}
+
+const handleTouchEnd = (e) => {
+  touchEndX.value = e.changedTouches[0].screenX
+  handleSwipe()
+}
+
+const handleSwipe = () => {
+  const swipeThreshold = 50
+  if (touchEndX.value < touchStartX.value - swipeThreshold) {
+    nextSlide()
+  }
+  if (touchEndX.value > touchStartX.value + swipeThreshold) {
+    prevSlide()
+  }
 }
 
 const activeCategory = ref(Object.keys(siteData.faqs)[0])

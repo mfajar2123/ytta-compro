@@ -17,7 +17,7 @@
     <section class="relative z-30 -mt-10 mb-10">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto bg-white rounded-full p-2 shadow-2xl border border-goldensand/20 flex items-center transform transition-transform hover:scale-[1.02] duration-300">
-          <div class="pl-6 pr-4">
+          <div class="pl-4 pr-2 sm:pl-6 sm:pr-4">
             <Icon name="mdi:magnify" class="text-3xl text-goldensand" />
           </div>
           <input 
@@ -26,7 +26,7 @@
             placeholder="Cari lokasi cabang berdasarkan kota atau area (misal: Jakarta, Bandung, Serang)..."
             class="w-full py-4 bg-transparent text-lg focus:outline-none font-sans text-blackobsidian placeholder-gray-400"
           >
-          <button v-if="searchQuery" @click="searchQuery = ''" class="pr-6 pl-4 text-gray-400 hover:text-goldensand transition-colors">
+          <button v-if="searchQuery" @click="searchQuery = ''" class="pr-4 pl-2 sm:pr-6 sm:pl-4 text-gray-400 hover:text-goldensand transition-colors">
             <Icon name="mdi:close-circle" class="text-2xl" />
           </button>
         </div>
@@ -48,7 +48,7 @@
             
             <div class="p-8 lg:p-10 flex-grow flex flex-col relative">
               <div class="absolute top-8 right-8 text-whitedust opacity-50">
-                <span class="text-6xl font-bold italic font-sans">{{ String(index + 1).padStart(2, '0') }}</span>
+                <span class="text-5xl md:text-6xl font-bold italic font-sans">{{ String(index + 1).padStart(2, '0') }}</span>
               </div>
               
               <h3 class="text-2xl font-semibold text-blackobsidian mb-8 pr-12 relative z-10">{{ store.name }}</h3>

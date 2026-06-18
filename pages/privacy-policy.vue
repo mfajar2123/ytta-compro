@@ -11,7 +11,7 @@
     <!-- Content -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4 max-w-4xl">
-        <div class="prose prose-lg max-w-none text-gray-600 font-sans prose-headings:font-heading prose-headings:text-blackobsidian prose-a:text-goldensand hover:prose-a:text-yellow-600">
+        <div class="prose md:prose-lg max-w-none text-gray-600 font-sans prose-headings:font-heading prose-headings:text-blackobsidian prose-a:text-goldensand hover:prose-a:text-yellow-600">
           
           <p>
             Kebijakan Privasi ini menjelaskan kebijakan dan prosedur Kami terkait pengumpulan, penggunaan, dan pengungkapan informasi Anda saat Anda menggunakan Layanan, serta memberitahu Anda tentang hak privasi Anda dan bagaimana hukum melindungi Anda.

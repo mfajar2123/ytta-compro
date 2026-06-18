@@ -42,7 +42,7 @@
     </section>
 
     <!-- Floating WhatsApp Menu -->
-    <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+    <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 flex flex-col items-end">
       <!-- Popup Menu -->
       <transition 
         enter-active-class="transition duration-300 ease-out"

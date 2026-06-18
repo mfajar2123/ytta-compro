@@ -20,25 +20,40 @@ Situs web resmi dan platform digital untuk Raja Emas Indonesia, penyedia emas mu
 - **Tata Letak Responsif**: Dioptimalkan untuk perangkat desktop, tablet, dan seluler.
 - **Siap SEO**: HTML semantik, penandaan meta yang tepat, dan skor *lighthouse* yang dioptimalkan.
 
+## Prasyarat
+
+Sebelum memulai, pastikan sistem Anda memiliki:
+- **Node.js**: (disarankan versi 18.x atau yang lebih baru).
+- **pnpm**: Proyek ini diwajibkan menggunakan `pnpm` sebagai *package manager* utama.
+
+Jika Anda belum menginstal `pnpm`, Anda dapat menginstalnya menggunakan npm:
+```bash
+npm install -g pnpm
+```
+
 ## Instalasi & Pengaturan
 
 1. **Instal Dependensi**
+   Karena proyek ini menggunakan `pnpm`, jalankan perintah berikut untuk menginstal semua dependensi proyek secara efisien:
    ```bash
    pnpm install
    ```
 
 2. **Server Pengembangan (Development)**
+   Jalankan server pengembangan:
    ```bash
    pnpm run dev
    ```
    Aplikasi akan tersedia di `http://localhost:3000`.
 
 3. **Build Produksi (Production)**
+   Membangun aplikasi untuk lingkungan produksi:
    ```bash
    pnpm run build
    ```
 
 4. **Pratinjau Produksi (Preview)**
+   Melihat pratinjau hasil build produksi secara lokal:
    ```bash
    pnpm run preview
    ```
