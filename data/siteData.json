@@ -150,28 +150,33 @@
   "features": [
     {
       "icon": "mdi:certificate-outline",
-      "title": "Mau Jual Emas Tanpa Surat?",
-      "description": "Kami membeli berbagai jenis Logam Mulia seperti Emas Perhiasan, Emas Batangan, Emas Tanpa Surat, Emas Lama, Emas Warisan dan Emas Patah / Rusak dengan Harga Terbaik. Cairkan Emas Anda Menjadi Uang Sekarang!"
+      "title": "One Stop Gold Solution",
+      "description": "Logam mulia 24 Karat untuk investasi, hadiah, corporate gifting, penghargaan, dan kebutuhan branding dalam satu solusi terpercaya."
     },
     {
       "icon": "mdi:magnify-scan",
-      "title": "Pengecekan yang Akurat dengan XRF",
-      "description": "Kami menggunakan alat pengecekan XRF modern buatan Amerika yang mampu mendeteksi kadar atau karat emas secara akurat dalam hitungan detik."
+      "title": "Custom Without Limits",
+      "description": "Bebas menentukan desain, ukuran, bentuk, hingga kemasan sesuai identitas dan kebutuhan Anda."
     },
     {
       "icon": "mdi:shield-check-outline",
-      "title": "Proses Transparan, Mudah, & Aman",
-      "description": "Setiap proses pengecekan dilakukan secara langsung di depan pelanggan, tanpa rekayasa. Kami menjunjung tinggi nilai kejujuran agar pelanggan merasa aman dan nyaman."
+      "title": "Trusted Quality",
+      "description": "Diproduksi menggunakan emas 24 Karat (99,9%) bersertifikat dengan standar kualitas dan presisi tinggi."
     },
     {
       "icon": "mdi:cash-multiple",
-      "title": "Harga Tinggi Tanpa Potongan",
-      "description": "Kami memberikan harga jual emas terbaik di pasaran, bahkan untuk emas dalam kondisi rusak, patah, atau tanpa surat sekalipun. Bandingkan dengan tempat lain!"
+      "title": "Nationwide Service",
+      "description": "Didukung jaringan 74 store di seluruh Indonesia untuk memberikan kemudahan layanan pembelian dan buyback."
     },
     {
       "icon": "mdi:map-marker-multiple-outline",
-      "title": "Outlet Tersebar di 68 Kota",
-      "description": "Kami menghadirkan outlet resmi Raja Emas di 68 kota besar di Indonesia. Silahkan datang langsung dengan membawa emas dalam segala kondisi."
+      "title": "Premium Packaging",
+      "description": "Pilihan kemasan eksklusif yang dirancang untuk meningkatkan nilai dan kesan pada setiap produk logam mulia."
+    },
+    {
+      "icon": "mdi:cash-refund",
+      "title": "Buyback Guarantee",
+      "description": "Nikmati kemudahan menjual kembali produk Anda melalui seluruh jaringan Raja Emas Indonesia."
     }
   ],
   "pricing": {
