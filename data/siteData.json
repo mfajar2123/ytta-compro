@@ -169,149 +169,11 @@
       "description": "Didukung jaringan 74 store di seluruh Indonesia untuk memberikan kemudahan layanan pembelian dan buyback."
     },
     {
-      "icon": "mdi:map-marker-multiple-outline",
-      "title": "Premium Packaging",
-      "description": "Pilihan kemasan eksklusif yang dirancang untuk meningkatkan nilai dan kesan pada setiap produk logam mulia."
-    },
-    {
       "icon": "mdi:cash-refund",
       "title": "Buyback Guarantee",
       "description": "Nikmati kemudahan menjual kembali produk Anda melalui seluruh jaringan Raja Emas Indonesia."
     }
   ],
-  "pricing": {
-    "lastUpdate": "12 Juni 2026 16.51.52",
-    "karat": [
-      {
-        "karat": "K24*",
-        "price": "Rp 2.340.000"
-      },
-      {
-        "karat": "K24 (99.5%)",
-        "price": "Rp 2.290.000"
-      },
-      {
-        "karat": "K23",
-        "price": "Rp 2.045.000"
-      },
-      {
-        "karat": "K22",
-        "price": "Rp 1.873.000"
-      },
-      {
-        "karat": "K21",
-        "price": "Rp 1.789.000"
-      },
-      {
-        "karat": "K20",
-        "price": "Rp 1.703.000"
-      },
-      {
-        "karat": "K19",
-        "price": "Rp 1.617.000"
-      },
-      {
-        "karat": "K18",
-        "price": "Rp 1.534.000"
-      },
-      {
-        "karat": "K17",
-        "price": "Rp 1.448.000"
-      },
-      {
-        "karat": "K16",
-        "price": "Rp 1.362.000"
-      },
-      {
-        "karat": "K15",
-        "price": "Rp 1.278.000"
-      },
-      {
-        "karat": "K14",
-        "price": "Rp 1.193.000"
-      },
-      {
-        "karat": "K13",
-        "price": "Rp 1.107.000"
-      },
-      {
-        "karat": "K12",
-        "price": "Rp 1.023.000"
-      },
-      {
-        "karat": "K11",
-        "price": "Rp 937.000"
-      },
-      {
-        "karat": "K10",
-        "price": "Rp 852.000"
-      },
-      {
-        "karat": "K9",
-        "price": "Rp 768.000"
-      },
-      {
-        "karat": "K8",
-        "price": "Rp 682.000"
-      },
-      {
-        "karat": "K7",
-        "price": "Rp 596.000"
-      },
-      {
-        "karat": "K6",
-        "price": "Rp 515.000"
-      },
-      {
-        "karat": "K5",
-        "price": "Rp 425.000"
-      }
-    ],
-    "logamMulia": [
-      {
-        "name": "LM ANTAM BARU",
-        "purity": "99.99%",
-        "price": "Rp 2.385.000",
-        "karat": "K24"
-      },
-      {
-        "name": "LM ANTAM LAMA",
-        "purity": "99.99%",
-        "price": "Rp 2.340.000",
-        "karat": "K24"
-      },
-      {
-        "name": "LM NON SERTIF",
-        "purity": "99.99%",
-        "price": "Rp 2.300.000",
-        "karat": "K24"
-      },
-      {
-        "name": "RHODIUM (Rh)",
-        "purity": "99.99%",
-        "price": "Rp 2.750.000",
-        "karat": "-"
-      },
-      {
-        "name": "PALADIUM (Pd)",
-        "purity": "99.99%",
-        "price": "Rp 500.000",
-        "karat": "-"
-      },
-      {
-        "name": "PLATINUM (Pt)",
-        "purity": "99.99%",
-        "price": "Rp 675.000",
-        "karat": "-"
-      },
-      {
-        "name": "PERAK",
-        "purity": "99.99%",
-        "price": "Rp 30.000",
-        "karat": "-"
-      }
-    ]
-  },
   "testimonials": [
     {
       "id": "rev-1",
@@ -484,42 +346,42 @@
         "id": "lc-1",
         "name": "Corp Incentive C",
         "weight": "",
-        "image": "/img/product/lm-custom/1. Corp Incentive C.jpeg",
+        "image": "/img/product/lm-custom/1. Corp Incentive C.png",
         "description": "Logam mulia custom desain Corp Incentive C."
       },
       {
         "id": "lc-2",
         "name": "Sales Achievement Award",
         "weight": "",
-        "image": "/img/product/lm-custom/11. Sales Achievement Award.jpeg",
+        "image": "/img/product/lm-custom/11. Sales Achievement Award.png",
         "description": "Logam mulia custom desain Sales Achievement Award."
       },
       {
         "id": "lc-3",
         "name": "Appreciation for Speakers",
         "weight": "",
-        "image": "/img/product/lm-custom/15. Appreciation for Speakers.jpeg",
+        "image": "/img/product/lm-custom/15. Appreciation for Speakers.png",
         "description": "Logam mulia custom desain Appreciation for Speakers."
       },
       {
         "id": "lc-4",
         "name": "Employee Of The Month A",
         "weight": "",
-        "image": "/img/product/lm-custom/2. Employee Of The Month A.jpeg",
+        "image": "/img/product/lm-custom/2. Employee Of The Month A.png",
         "description": "Logam mulia custom desain Employee Of The Month A."
       },
       {
         "id": "lc-5",
         "name": "VIP Client Gift A",
         "weight": "",
-        "image": "/img/product/lm-custom/3. VIP Client Gift A.jpeg",
+        "image": "/img/product/lm-custom/3. VIP Client Gift A.png",
         "description": "Logam mulia custom desain VIP Client Gift A."
       },
       {
         "id": "lc-6",
         "name": "MICE Event",
         "weight": "",
-        "image": "/img/product/lm-custom/9. MICE Event.jpeg",
+        "image": "/img/product/lm-custom/9. MICE Event.png",
         "description": "Logam mulia custom desain MICE Event."
       },
       {
@@ -554,14 +416,14 @@
         "id": "lc-11",
         "name": "Pin Shio",
         "weight": "",
-        "image": "/img/product/lm-custom/Pin Shio.jpeg",
+        "image": "/img/product/lm-custom/Pin Shio.png",
         "description": "Logam mulia custom desain Pin Shio."
       },
       {
         "id": "lc-12",
         "name": "Pin Zodiak",
         "weight": "",
-        "image": "/img/product/lm-custom/Pin Zodiak.jpeg",
+        "image": "/img/product/lm-custom/Pin Zodiak.png",
         "description": "Logam mulia custom desain Pin Zodiak."
       },
       {
@@ -1273,6 +1135,33 @@
       "hours": "10.00-20.00 WIB",
       "note": "BUKA SETIAP HARI",
       "mapCoordinates": "https://maps.app.goo.gl/xoNwHtyN8g5wMpYs6"
+    },
+    {
+      "id": "st-70",
+      "name": "Medan - Medan Mall 2",
+      "address": "Medan Mall, Jl. M. T. Haryono No.21 Lt Dasar, Pusat Ps., Kec. Medan Kota, Kota Medan, Sumatera Utara 20212",
+      "phone": "0822-9999-6084",
+      "hours": "10.00-20.00 WIB",
+      "note": "BUKA SETIAP HARI",
+      "mapCoordinates": "https://maps.app.goo.gl/m2Es7Eg989Jvadki7"
+    },
+    {
+      "id": "st-71",
+      "name": "Cilegon",
+      "address": "Jl. Ahmad Yani No.15, Ketileng, Kec. Cilegon, Kota Cilegon, Banten 42416",
+      "phone": "0822-9999-7049",
+      "hours": "10.00-18.00 WIB",
+      "note": "BUKA SETIAP HARI",
+      "mapCoordinates": "https://maps.app.goo.gl/JKQvVv8ScEwjLyF99"
+    },
+    {
+      "id": "st-72",
+      "name": "Cianjur",
+      "address": "Jln HOS Cokroaminoto no 176, Muka, Cianjur Jawa Barat (Patokannya Samping Uchi Parfume)",
+      "phone": "0822-9999-7062",
+      "hours": "10.00-20.00 WIB",
+      "note": "BUKA SETIAP HARI",
+      "mapCoordinates": "https://maps.app.goo.gl/A3xsJ5ALvfL9Lujp6"
     }
   ]
 }

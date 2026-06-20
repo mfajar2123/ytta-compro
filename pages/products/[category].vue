@@ -41,7 +41,7 @@
             :key="product.id"
             class="product-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full transform snap-start"
           >
-            <div class="relative h-56 md:h-64 flex-shrink-0 overflow-hidden bg-lightamethyst flex items-center justify-center p-6 group/img">
+            <div class="relative h-56 md:h-64 flex-shrink-0 overflow-hidden bg-lightamethyst flex items-center justify-center group/img">
               <NuxtImg :src="product.image" :alt="product.name" class="product-image h-full w-full object-contain rounded-2xl group-hover/img:scale-110 transition-transform duration-700 ease-out" loading="lazy" format="webp" width="600" height="600" />
               <div class="absolute top-6 right-6 bg-goldensand/90 backdrop-blur-sm text-blackobsidian text-sm font-bold px-4 py-2 rounded-full shadow-lg transform translate-y-2 opacity-0 group-hover/img:translate-y-0 group-hover/img:opacity-100 transition-all duration-300">
                 {{ product.weight }}

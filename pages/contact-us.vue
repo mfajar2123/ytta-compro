@@ -1,8 +1,11 @@
 <template>
-  <div class="bg-darkamethyst min-h-screen flex flex-col pt-20">
+  <div class="bg-blackobsidian min-h-screen flex flex-col pt-20 relative overflow-hidden">
     <!-- Centered Content Section -->
-    <section class="relative flex-grow flex items-center justify-center overflow-hidden py-20">
+    <section class="relative flex-grow flex items-center justify-center py-20">
       
+      <!-- Subtle Purple Glow Accent -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-darkamethyst rounded-full blur-[100px] md:blur-[150px] opacity-80 pointer-events-none"></div>
+
       <!-- Subtle Background Icon (Not AI glow) -->
       <div class="hero-bg-icon absolute right-0 top-0 opacity-5 transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
         <Icon name="mdi:headset" class="text-[600px] text-white" />

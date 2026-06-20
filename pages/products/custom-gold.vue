@@ -1,7 +1,12 @@
 <template>
   <div id="custom-gold-page">
     <!-- Hero Section -->
-    <section class="hero-section relative min-h-screen pt-24 pb-16 flex items-center justify-center bg-darkamethyst text-white overflow-hidden">
+    <section class="hero-section relative min-h-screen pt-24 pb-16 flex items-center justify-center bg-blackobsidian text-white overflow-hidden">
+      
+      <!-- Subtle Purple Glow Accent (matching Contact Us) -->
+      <div class="absolute top-1/2 left 1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-darkamethyst rounded-full blur-[100px] md:blur-[150px] opacity-80 pointer-events-none z-0"></div>
+      
+
       <!-- Background elements replaced with solid non-gradient subtle decorations -->
       <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div class="absolute top-10 left-10 w-32 h-32 bg-goldensand/10 rounded-full"></div>
