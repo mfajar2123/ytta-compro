@@ -176,41 +176,6 @@
   ],
   "testimonials": [
     {
-      "id": "rev-1",
-      "image": "/img/review/review-shopee-1.jpeg",
-      "platform": "Shopee"
-    },
-    {
-      "id": "rev-2",
-      "image": "/img/review/review-wa-1.jpeg",
-      "platform": "Shopee"
-    },
-    {
-      "id": "rev-3",
-      "image": "/img/review/review-shopee-3.jpeg",
-      "platform": "Shopee"
-    },
-    {
-      "id": "rev-4",
-      "image": "/img/review/review-shopee-4.jpeg",
-      "platform": "Shopee"
-    },
-    {
-      "id": "rev-5",
-      "image": "/img/review/review-shopee-5.jpeg",
-      "platform": "Shopee"
-    },
-    {
-      "id": "rev-6",
-      "image": "/img/review/review-shopee-2.jpeg",
-      "platform": "WhatsApp"
-    },
-    {
-      "id": "rev-7",
-      "image": "/img/review/review-wa-2.jpeg",
-      "platform": "WhatsApp"
-    },
-    {
       "id": "rev-8",
       "image": "/img/review/Review 1.png",
       "platform": "WhatsApp"
@@ -258,6 +223,41 @@
     {
       "id": "rev-17",
       "image": "/img/review/Review 10.png",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-1",
+      "image": "/img/review/review-shopee-1.jpeg",
+      "platform": "Shopee"
+    },
+    {
+      "id": "rev-2",
+      "image": "/img/review/review-wa-1.jpeg",
+      "platform": "Shopee"
+    },
+    {
+      "id": "rev-3",
+      "image": "/img/review/review-shopee-3.jpeg",
+      "platform": "Shopee"
+    },
+    {
+      "id": "rev-4",
+      "image": "/img/review/review-shopee-4.jpeg",
+      "platform": "Shopee"
+    },
+    {
+      "id": "rev-5",
+      "image": "/img/review/review-shopee-5.jpeg",
+      "platform": "Shopee"
+    },
+    {
+      "id": "rev-6",
+      "image": "/img/review/review-shopee-2.jpeg",
+      "platform": "WhatsApp"
+    },
+    {
+      "id": "rev-7",
+      "image": "/img/review/review-wa-2.jpeg",
       "platform": "WhatsApp"
     }
   ],
